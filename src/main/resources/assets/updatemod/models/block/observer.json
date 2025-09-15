@@ -1,0 +1,10 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "updatemod:blocks/observer_front",
+    "side": "updatemod:blocks/observer_side",
+    "back": "updatemod:blocks/observer_back",
+    "bottom": "updatemod:blocks/observer_top",
+    "top": "updatemod:blocks/observer_top"
+  }
+}

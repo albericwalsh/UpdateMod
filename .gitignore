@@ -1,0 +1,69 @@
+# === Minecraft Forge 1.10.2 Mod ===
+
+# Gradle
+.gradle/
+build/
+out/
+bin/
+
+# Eclipse
+*.launch
+.settings/
+.classpath
+.project
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Minecraft / Forge files
+run/
+eclipse/
+libs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary / cache
+*.tmp
+*.swp
+*.swo
+
+# Other
+*.bak
+*.old
+
+
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run

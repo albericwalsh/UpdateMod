@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "updatemod:copper_block"
+    }
+  }
+}

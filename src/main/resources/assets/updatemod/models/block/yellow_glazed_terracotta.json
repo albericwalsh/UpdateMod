@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "updatemod:blocks/yellow_glazed_terracotta",
+    "front": "updatemod:blocks/yellow_glazed_terracotta",
+    "side": "updatemod:blocks/yellow_glazed_terracotta"
+  }
+}

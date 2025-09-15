@@ -1,0 +1,5826 @@
+[
+    {
+        "version": "1.11",
+        "id": "black_shulker_box",
+        "label": "Black Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "blue_shulker_box",
+        "label": "Blue Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "brown_shulker_box",
+        "label": "Brown Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "cyan_shulker_box",
+        "label": "Cyan Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "gray_shulker_box",
+        "label": "Gray Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "green_shulker_box",
+        "label": "Green Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "light_blue_shulker_box",
+        "label": "Light Blue Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "light_gray_shulker_box",
+        "label": "Light Gray Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "lime_shulker_box",
+        "label": "Lime Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "magenta_shulker_box",
+        "label": "Magenta Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "orange_shulker_box",
+        "label": "Orange Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "pink_shulker_box",
+        "label": "Pink Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "purple_shulker_box",
+        "label": "Purple Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "red_shulker_box",
+        "label": "Red Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "white_shulker_box",
+        "label": "White Shulker Box",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "decoration"
+    },
+    {
+        "version": "1.11",
+        "id": "yellow_shulker_box",
+        "label": "Yellow Shulker Box",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.11",
+        "id": "observer",
+        "label": "Observer",
+        "type": "facing_multi",
+        "hardness": 0.0,
+        "tab": "redstone"
+    },
+    {
+        "version": "1.12",
+        "id": "black_concrete",
+        "label": "Black Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "black_concrete_powder",
+        "label": "Black Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "black_glazed_terracotta",
+        "label": "Black Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "blue_concrete",
+        "label": "Blue Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "blue_concrete_powder",
+        "label": "Blue Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "blue_glazed_terracotta",
+        "label": "Blue Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "brown_concrete",
+        "label": "Brown Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "brown_concrete_powder",
+        "label": "Brown Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "brown_glazed_terracotta",
+        "label": "Brown Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "cyan_concrete",
+        "label": "Cyan Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "cyan_concrete_powder",
+        "label": "Cyan Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "cyan_glazed_terracotta",
+        "label": "Cyan Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "gray_concrete",
+        "label": "Gray Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "gray_concrete_powder",
+        "label": "Gray Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "gray_glazed_terracotta",
+        "label": "Gray Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "green_concrete",
+        "label": "Green Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "green_concrete_powder",
+        "label": "Green Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "green_glazed_terracotta",
+        "label": "Green Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "light_blue_concrete",
+        "label": "Light Blue Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "light_blue_concrete_powder",
+        "label": "Light Blue Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "light_blue_glazed_terracotta",
+        "label": "Light Blue Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "light_gray_concrete",
+        "label": "Light Gray Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "light_gray_concrete_powder",
+        "label": "Light Gray Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "light_gray_glazed_terracotta",
+        "label": "Light Gray Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "lime_concrete",
+        "label": "Lime Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "lime_concrete_powder",
+        "label": "Lime Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "lime_glazed_terracotta",
+        "label": "Lime Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "magenta_concrete",
+        "label": "Magenta Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "magenta_concrete_powder",
+        "label": "Magenta Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "magenta_glazed_terracotta",
+        "label": "Magenta Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "orange_concrete",
+        "label": "Orange Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "orange_concrete_powder",
+        "label": "Orange Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "orange_glazed_terracotta",
+        "label": "Orange Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "pink_concrete",
+        "label": "Pink Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "pink_concrete_powder",
+        "label": "Pink Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "pink_glazed_terracotta",
+        "label": "Pink Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "purple_concrete",
+        "label": "Purple Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "purple_concrete_powder",
+        "label": "Purple Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "purple_glazed_terracotta",
+        "label": "Purple Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "red_concrete",
+        "label": "Red Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "red_concrete_powder",
+        "label": "Red Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "red_glazed_terracotta",
+        "label": "Red Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "white_concrete",
+        "label": "White Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "white_concrete_powder",
+        "label": "White Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "white_glazed_terracotta",
+        "label": "White Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "yellow_concrete",
+        "label": "Yellow Concrete",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "yellow_concrete_powder",
+        "label": "Yellow Concrete Powder",
+        "type": "normal",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.12",
+        "id": "yellow_glazed_terracotta",
+        "label": "Yellow Glazed Terracotta",
+        "type": "facing",
+        "hardness": 0.0,
+        "tab": "building_blocks"
+    },
+    {
+        "version": "1.13",
+        "id": "acacia_pressure_plate",
+        "label": "Acacia Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "acacia_trapdoor",
+        "label": "Acacia Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "acacia_wood",
+        "label": "Acacia Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "birch_pressure_plate",
+        "label": "Birch Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "birch_trapdoor",
+        "label": "Birch Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "black_bed",
+        "label": "Black Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "blue_bed",
+        "label": "Blue Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "blue_ice",
+        "label": "Blue Ice",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "brain_coral",
+        "label": "Brain Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "brain_coral_block",
+        "label": "Brain Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "brain_coral_fan",
+        "label": "Brain Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "brown_bed",
+        "label": "Brown Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "bubble_coral",
+        "label": "Bubble Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "bubble_coral_block",
+        "label": "Bubble Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "bubble_coral_fan",
+        "label": "Bubble Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "bucket_of_cod",
+        "label": "Bucket of Cod",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "bucket_of_pufferfish",
+        "label": "Bucket of Pufferfish",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "bucket_of_salmon",
+        "label": "Bucket of Salmon",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "carved_pumpkin",
+        "label": "Carved Pumpkin",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "chipped_anvil",
+        "label": "Chipped Anvil",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "conduit",
+        "label": "Conduit",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "cyan_bed",
+        "label": "Cyan Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "damaged_anvil",
+        "label": "Damaged Anvil",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dark_oak_pressure_plate",
+        "label": "Dark Oak Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dark_oak_trapdoor",
+        "label": "Dark Oak Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dark_oak_wood",
+        "label": "Dark Oak Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dark_prismarine_slab",
+        "label": "Dark Prismarine Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dark_prismarine_stairs",
+        "label": "Dark Prismarine Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_brain_coral",
+        "label": "Dead Brain Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_brain_coral_block",
+        "label": "Dead Brain Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_brain_coral_fan",
+        "label": "Dead Brain Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_bubble_coral",
+        "label": "Dead Bubble Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_bubble_coral_block",
+        "label": "Dead Bubble Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_bubble_coral_fan",
+        "label": "Dead Bubble Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_fire_coral",
+        "label": "Dead Fire Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_fire_coral_block",
+        "label": "Dead Fire Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_fire_coral_fan",
+        "label": "Dead Fire Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_horn_coral",
+        "label": "Dead Horn Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_horn_coral_block",
+        "label": "Dead Horn Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_horn_coral_fan",
+        "label": "Dead Horn Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_tube_coral",
+        "label": "Dead Tube Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_tube_coral_block",
+        "label": "Dead Tube Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dead_tube_coral_fan",
+        "label": "Dead Tube Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "debug_stick",
+        "label": "Debug Stick",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dried_kelp",
+        "label": "Dried Kelp",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "dried_kelp_block",
+        "label": "Dried Kelp Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "fire_coral",
+        "label": "Fire Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "fire_coral_block",
+        "label": "Fire Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "fire_coral_fan",
+        "label": "Fire Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "gray_bed",
+        "label": "Gray Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "green_bed",
+        "label": "Green Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "heart_of_the_sea",
+        "label": "Heart of the Sea",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "horn_coral",
+        "label": "Horn Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "horn_coral_block",
+        "label": "Horn Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "horn_coral_fan",
+        "label": "Horn Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "jungle_pressure_plate",
+        "label": "Jungle Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "jungle_trapdoor",
+        "label": "Jungle Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "kelp",
+        "label": "Kelp",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "light_blue_bed",
+        "label": "Light Blue Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "light_gray_bed",
+        "label": "Light Gray Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "lime_bed",
+        "label": "Lime Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "magenta_bed",
+        "label": "Magenta Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "mushroom_stem",
+        "label": "Mushroom Stem",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "nautilus_shell",
+        "label": "Nautilus Shell",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "orange_bed",
+        "label": "Orange Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "petrified_oak_slab",
+        "label": "Petrified Oak Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "phantom_membrane",
+        "label": "Phantom Membrane",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "pink_bed",
+        "label": "Pink Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "prismarine_brick_slab",
+        "label": "Prismarine Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "prismarine_brick_stairs",
+        "label": "Prismarine Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "prismarine_slab",
+        "label": "Prismarine Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "prismarine_stairs",
+        "label": "Prismarine Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "purple_bed",
+        "label": "Purple Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "scute",
+        "label": "Scute",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "sea_pickle",
+        "label": "Sea Pickle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "seagrass",
+        "label": "Seagrass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "shulker_box",
+        "label": "Shulker Box",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "smooth_quartz_block",
+        "label": "Smooth Quartz Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "smooth_red_sandstone",
+        "label": "Smooth Red Sandstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "smooth_sandstone",
+        "label": "Smooth Sandstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "smooth_stone",
+        "label": "Smooth Stone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "spruce_pressure_plate",
+        "label": "Spruce Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "spruce_trapdoor",
+        "label": "Spruce Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_acacia_log",
+        "label": "Stripped Acacia Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_acacia_wood",
+        "label": "Stripped Acacia Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_birch_log",
+        "label": "Stripped Birch Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_birch_wood",
+        "label": "Stripped Birch Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_dark_oak_log",
+        "label": "Stripped Dark Oak Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_dark_oak_wood",
+        "label": "Stripped Dark Oak Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_jungle_log",
+        "label": "Stripped Jungle Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_jungle_wood",
+        "label": "Stripped Jungle Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_oak_log",
+        "label": "Stripped Oak Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_oak_wood",
+        "label": "Stripped Oak Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_spruce_log",
+        "label": "Stripped Spruce Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "stripped_spruce_wood",
+        "label": "Stripped Spruce Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "trident",
+        "label": "Trident",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "tube_coral",
+        "label": "Tube Coral",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "tube_coral_block",
+        "label": "Tube Coral Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "tube_coral_fan",
+        "label": "Tube Coral Fan",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "turtle_egg",
+        "label": "Turtle Egg",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "turtle_shell",
+        "label": "Turtle Shell",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "white_bed",
+        "label": "White Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.13",
+        "id": "yellow_bed",
+        "label": "Yellow Bed",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "acacia_sign",
+        "label": "Acacia Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "barrel",
+        "label": "Barrel",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "birch_sign",
+        "label": "Birch Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "dark_oak_sign",
+        "label": "Dark Oak Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "jungle_sign",
+        "label": "Jungle Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "spruce_sign",
+        "label": "Spruce Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "suspicious_stew",
+        "label": "Suspicious Stew",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "andesite_slab",
+        "label": "Andesite Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "andesite_stairs",
+        "label": "Andesite Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "andesite_wall",
+        "label": "Andesite Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "bamboo",
+        "label": "Bamboo",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "banner_pattern_-_creeper_charge",
+        "label": "Banner Pattern - Creeper Charge",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "banner_pattern_-_flower_charge",
+        "label": "Banner Pattern - Flower Charge",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "banner_pattern_-_globe",
+        "label": "Banner Pattern - Globe",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "banner_pattern_-_skull_charge",
+        "label": "Banner Pattern - Skull Charge",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "banner_pattern_-_thing",
+        "label": "Banner Pattern - Thing",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "bell",
+        "label": "Bell",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "black_dye",
+        "label": "Black Dye",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "blast_furnace",
+        "label": "Blast Furnace",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "blue_dye",
+        "label": "Blue Dye",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "brick_wall",
+        "label": "Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "brown_dye",
+        "label": "Brown Dye",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "campfire",
+        "label": "Campfire",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "cartography_table",
+        "label": "Cartography Table",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "composter",
+        "label": "Composter",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "cornflower",
+        "label": "Cornflower",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "crossbow",
+        "label": "Crossbow",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "cut_red_sandstone_slab",
+        "label": "Cut Red Sandstone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "cut_sandstone_slab",
+        "label": "Cut Sandstone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "diorite_slab",
+        "label": "Diorite Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "diorite_stairs",
+        "label": "Diorite Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "diorite_wall",
+        "label": "Diorite Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "end_stone_brick_slab",
+        "label": "End Stone Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "end_stone_brick_stairs",
+        "label": "End Stone Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "end_stone_brick_wall",
+        "label": "End Stone Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "fletching_table",
+        "label": "Fletching Table",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "granite_slab",
+        "label": "Granite Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "granite_stairs",
+        "label": "Granite Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "granite_wall",
+        "label": "Granite Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "grindstone",
+        "label": "Grindstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "jigsaw_block",
+        "label": "Jigsaw Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "lantern",
+        "label": "Lantern",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "leather_horse_armor",
+        "label": "Leather Horse Armor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "lectern",
+        "label": "Lectern",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "lily_of_the_valley",
+        "label": "Lily of the Valley",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "loom",
+        "label": "Loom",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "mossy_cobblestone_slab",
+        "label": "Mossy Cobblestone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "mossy_cobblestone_stairs",
+        "label": "Mossy Cobblestone Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "mossy_stone_brick_slab",
+        "label": "Mossy Stone Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "mossy_stone_brick_stairs",
+        "label": "Mossy Stone Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "mossy_stone_brick_wall",
+        "label": "Mossy Stone Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "nether_brick_wall",
+        "label": "Nether Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "polished_andesite_slab",
+        "label": "Polished Andesite Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "polished_andesite_stairs",
+        "label": "Polished Andesite Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "polished_diorite_slab",
+        "label": "Polished Diorite Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "polished_diorite_stairs",
+        "label": "Polished Diorite Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "polished_granite_slab",
+        "label": "Polished Granite Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "polished_granite_stairs",
+        "label": "Polished Granite Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "prismarine_wall",
+        "label": "Prismarine Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "red_nether_brick_slab",
+        "label": "Red Nether Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "red_nether_brick_stairs",
+        "label": "Red Nether Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "red_nether_brick_wall",
+        "label": "Red Nether Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "red_sandstone_wall",
+        "label": "Red Sandstone Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "sandstone_wall",
+        "label": "Sandstone Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "scaffolding",
+        "label": "Scaffolding",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smithing_table",
+        "label": "Smithing Table",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smoker",
+        "label": "Smoker",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smooth_quartz_slab",
+        "label": "Smooth Quartz Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smooth_quartz_stairs",
+        "label": "Smooth Quartz Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smooth_red_sandstone_slab",
+        "label": "Smooth Red Sandstone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smooth_red_sandstone_stairs",
+        "label": "Smooth Red Sandstone Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smooth_sandstone_slab",
+        "label": "Smooth Sandstone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "smooth_sandstone_stairs",
+        "label": "Smooth Sandstone Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "stone_brick_wall",
+        "label": "Stone Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "stone_slab",
+        "label": "Stone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "stone_stairs",
+        "label": "Stone Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "stonecutter",
+        "label": "Stonecutter",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "sweet_berries",
+        "label": "Sweet Berries",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "white_dye",
+        "label": "White Dye",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.14",
+        "id": "wither_rose",
+        "label": "Wither Rose",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.15",
+        "id": "bee_nest",
+        "label": "Bee Nest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.15",
+        "id": "beehive",
+        "label": "Beehive",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.15",
+        "id": "honey_block",
+        "label": "Honey Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.15",
+        "id": "honey_bottle",
+        "label": "Honey Bottle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.15",
+        "id": "honeycomb",
+        "label": "Honeycomb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.15",
+        "id": "honeycomb_block",
+        "label": "Honeycomb Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_sign",
+        "label": "Crimson Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_boots",
+        "label": "Netherite Boots",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_chestplate",
+        "label": "Netherite Chestplate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_helmet",
+        "label": "Netherite Helmet",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_leggings",
+        "label": "Netherite Leggings",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_sign",
+        "label": "Warped Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "ancient_debris",
+        "label": "Ancient Debris",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "banner_pattern_-_snout",
+        "label": "Banner Pattern - Snout",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "basalt",
+        "label": "Basalt",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "blackstone",
+        "label": "Blackstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "blackstone_slab",
+        "label": "Blackstone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "blackstone_stairs",
+        "label": "Blackstone Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "blackstone_wall",
+        "label": "Blackstone Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "block_of_netherite",
+        "label": "Block of Netherite",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "chain",
+        "label": "Chain",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "chiseled_nether_bricks",
+        "label": "Chiseled Nether Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "chiseled_polished_blackstone",
+        "label": "Chiseled Polished Blackstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "cracked_nether_bricks",
+        "label": "Cracked Nether Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "cracked_polished_blackstone_bricks",
+        "label": "Cracked Polished Blackstone Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_button",
+        "label": "Crimson Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_door",
+        "label": "Crimson Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_fence",
+        "label": "Crimson Fence",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_fence_gate",
+        "label": "Crimson Fence Gate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_fungus",
+        "label": "Crimson Fungus",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_hyphae",
+        "label": "Crimson Hyphae",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_nylium",
+        "label": "Crimson Nylium",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_planks",
+        "label": "Crimson Planks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_pressure_plate",
+        "label": "Crimson Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_roots",
+        "label": "Crimson Roots",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_slab",
+        "label": "Crimson Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_stairs",
+        "label": "Crimson Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_stem",
+        "label": "Crimson Stem",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crimson_trapdoor",
+        "label": "Crimson Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "crying_obsidian",
+        "label": "Crying Obsidian",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "gilded_blackstone",
+        "label": "Gilded Blackstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "lodestone",
+        "label": "Lodestone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "lodestone_compass",
+        "label": "Lodestone Compass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "music_disc_-_lena_raine_-_pigstep",
+        "label": "Music Disc - Lena Raine - Pigstep",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "nether_gold_ore",
+        "label": "Nether Gold Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "nether_sprouts",
+        "label": "Nether Sprouts",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_axe",
+        "label": "Netherite Axe",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_hoe",
+        "label": "Netherite Hoe",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_ingot",
+        "label": "Netherite Ingot",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_pickaxe",
+        "label": "Netherite Pickaxe",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_scrap",
+        "label": "Netherite Scrap",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_shovel",
+        "label": "Netherite Shovel",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "netherite_sword",
+        "label": "Netherite Sword",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_basalt",
+        "label": "Polished Basalt",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone",
+        "label": "Polished Blackstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_brick_slab",
+        "label": "Polished Blackstone Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_brick_stairs",
+        "label": "Polished Blackstone Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_brick_wall",
+        "label": "Polished Blackstone Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_bricks",
+        "label": "Polished Blackstone Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_button",
+        "label": "Polished Blackstone Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_pressure_plate",
+        "label": "Polished Blackstone Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_slab",
+        "label": "Polished Blackstone Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_stairs",
+        "label": "Polished Blackstone Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "polished_blackstone_wall",
+        "label": "Polished Blackstone Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "quartz_bricks",
+        "label": "Quartz Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "respawn_anchor",
+        "label": "Respawn Anchor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "shroomlight",
+        "label": "Shroomlight",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "soul_campfire",
+        "label": "Soul Campfire",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "soul_lantern",
+        "label": "Soul Lantern",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "soul_soil",
+        "label": "Soul Soil",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "soul_torch",
+        "label": "Soul Torch",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "stripped_crimson_hyphae",
+        "label": "Stripped Crimson Hyphae",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "stripped_crimson_stem",
+        "label": "Stripped Crimson Stem",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "stripped_warped_hyphae",
+        "label": "Stripped Warped Hyphae",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "stripped_warped_stem",
+        "label": "Stripped Warped Stem",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "target",
+        "label": "Target",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "twisting_vines",
+        "label": "Twisting Vines",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_button",
+        "label": "Warped Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_door",
+        "label": "Warped Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_fence",
+        "label": "Warped Fence",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_fence_gate",
+        "label": "Warped Fence Gate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_fungus",
+        "label": "Warped Fungus",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_fungus_on_a_stick",
+        "label": "Warped Fungus on a Stick",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_hyphae",
+        "label": "Warped Hyphae",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_nylium",
+        "label": "Warped Nylium",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_planks",
+        "label": "Warped Planks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_pressure_plate",
+        "label": "Warped Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_roots",
+        "label": "Warped Roots",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_slab",
+        "label": "Warped Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_stairs",
+        "label": "Warped Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_stem",
+        "label": "Warped Stem",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_trapdoor",
+        "label": "Warped Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "warped_wart_block",
+        "label": "Warped Wart Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.16",
+        "id": "weeping_vines",
+        "label": "Weeping Vines",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "bucket_of_axolotl",
+        "label": "Bucket of Axolotl",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "amethyst_cluster",
+        "label": "Amethyst Cluster",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "amethyst_shard",
+        "label": "Amethyst Shard",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "azalea",
+        "label": "Azalea",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "azalea_leaves",
+        "label": "Azalea Leaves",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "big_dripleaf",
+        "label": "Big Dripleaf",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "black_candle",
+        "label": "Black Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "block_of_amethyst",
+        "label": "Block of Amethyst",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "block_of_copper",
+        "label": "Block of Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "block_of_raw_copper",
+        "label": "Block of Raw Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "block_of_raw_gold",
+        "label": "Block of Raw Gold",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "block_of_raw_iron",
+        "label": "Block of Raw Iron",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "blue_candle",
+        "label": "Blue Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "brown_candle",
+        "label": "Brown Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "budding_amethyst",
+        "label": "Budding Amethyst",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "calcite",
+        "label": "Calcite",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "candle",
+        "label": "Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "chiseled_deepslate",
+        "label": "Chiseled Deepslate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cobbled_deepslate",
+        "label": "Cobbled Deepslate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cobbled_deepslate_slab",
+        "label": "Cobbled Deepslate Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cobbled_deepslate_stairs",
+        "label": "Cobbled Deepslate Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cobbled_deepslate_wall",
+        "label": "Cobbled Deepslate Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "copper_ingot",
+        "label": "Copper Ingot",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "copper_ore",
+        "label": "Copper Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cracked_deepslate_bricks",
+        "label": "Cracked Deepslate Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cracked_deepslate_tiles",
+        "label": "Cracked Deepslate Tiles",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cut_copper",
+        "label": "Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cut_copper_slab",
+        "label": "Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cut_copper_stairs",
+        "label": "Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "cyan_candle",
+        "label": "Cyan Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate",
+        "label": "Deepslate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_brick_slab",
+        "label": "Deepslate Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_brick_stairs",
+        "label": "Deepslate Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_brick_wall",
+        "label": "Deepslate Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_bricks",
+        "label": "Deepslate Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_coal_ore",
+        "label": "Deepslate Coal Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_copper_ore",
+        "label": "Deepslate Copper Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_diamond_ore",
+        "label": "Deepslate Diamond Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_emerald_ore",
+        "label": "Deepslate Emerald Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_gold_ore",
+        "label": "Deepslate Gold Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_iron_ore",
+        "label": "Deepslate Iron Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_lapis_lazuli_ore",
+        "label": "Deepslate Lapis Lazuli Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_redstone_ore",
+        "label": "Deepslate Redstone Ore",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_tile_slab",
+        "label": "Deepslate Tile Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_tile_stairs",
+        "label": "Deepslate Tile Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_tile_wall",
+        "label": "Deepslate Tile Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "deepslate_tiles",
+        "label": "Deepslate Tiles",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "dripstone_block",
+        "label": "Dripstone Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "exposed_copper",
+        "label": "Exposed Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "exposed_cut_copper",
+        "label": "Exposed Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "exposed_cut_copper_slab",
+        "label": "Exposed Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "exposed_cut_copper_stairs",
+        "label": "Exposed Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "flowering_azalea",
+        "label": "Flowering Azalea",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "flowering_azalea_leaves",
+        "label": "Flowering Azalea Leaves",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "glow_berries",
+        "label": "Glow Berries",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "glow_ink_sac",
+        "label": "Glow Ink Sac",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "glow_item_frame",
+        "label": "Glow Item Frame",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "glow_lichen",
+        "label": "Glow Lichen",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "gray_candle",
+        "label": "Gray Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "green_candle",
+        "label": "Green Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "hanging_roots",
+        "label": "Hanging Roots",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "infested_deepslate",
+        "label": "Infested Deepslate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "large_amethyst_bud",
+        "label": "Large Amethyst Bud",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "light",
+        "label": "Light",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "light_blue_candle",
+        "label": "Light Blue Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "light_gray_candle",
+        "label": "Light Gray Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "lightning_rod",
+        "label": "Lightning Rod",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "lime_candle",
+        "label": "Lime Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "magenta_candle",
+        "label": "Magenta Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "medium_amethyst_bud",
+        "label": "Medium Amethyst Bud",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "moss_block",
+        "label": "Moss Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "moss_carpet",
+        "label": "Moss Carpet",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "orange_candle",
+        "label": "Orange Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "oxidized_copper",
+        "label": "Oxidized Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "oxidized_cut_copper",
+        "label": "Oxidized Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "oxidized_cut_copper_slab",
+        "label": "Oxidized Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "oxidized_cut_copper_stairs",
+        "label": "Oxidized Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "pink_candle",
+        "label": "Pink Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "pointed_dripstone",
+        "label": "Pointed Dripstone",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "polished_deepslate",
+        "label": "Polished Deepslate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "polished_deepslate_slab",
+        "label": "Polished Deepslate Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "polished_deepslate_stairs",
+        "label": "Polished Deepslate Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "polished_deepslate_wall",
+        "label": "Polished Deepslate Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "powder_snow_bucket",
+        "label": "Powder Snow Bucket",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "purple_candle",
+        "label": "Purple Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "raw_copper",
+        "label": "Raw Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "raw_gold",
+        "label": "Raw Gold",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "raw_iron",
+        "label": "Raw Iron",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "red_candle",
+        "label": "Red Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "rooted_dirt",
+        "label": "Rooted Dirt",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "sculk_sensor",
+        "label": "Sculk Sensor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "small_amethyst_bud",
+        "label": "Small Amethyst Bud",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "small_dripleaf",
+        "label": "Small Dripleaf",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "smooth_basalt",
+        "label": "Smooth Basalt",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "spore_blossom",
+        "label": "Spore Blossom",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "spyglass",
+        "label": "Spyglass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "tinted_glass",
+        "label": "Tinted Glass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "tuff",
+        "label": "Tuff",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_block_of_copper",
+        "label": "Waxed Block of Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_cut_copper",
+        "label": "Waxed Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_cut_copper_slab",
+        "label": "Waxed Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_cut_copper_stairs",
+        "label": "Waxed Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_exposed_copper",
+        "label": "Waxed Exposed Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_exposed_cut_copper",
+        "label": "Waxed Exposed Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_exposed_cut_copper_slab",
+        "label": "Waxed Exposed Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_exposed_cut_copper_stairs",
+        "label": "Waxed Exposed Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_oxidized_copper",
+        "label": "Waxed Oxidized Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_oxidized_cut_copper",
+        "label": "Waxed Oxidized Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_oxidized_cut_copper_slab",
+        "label": "Waxed Oxidized Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_oxidized_cut_copper_stairs",
+        "label": "Waxed Oxidized Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_weathered_copper",
+        "label": "Waxed Weathered Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_weathered_cut_copper",
+        "label": "Waxed Weathered Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_weathered_cut_copper_slab",
+        "label": "Waxed Weathered Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "waxed_weathered_cut_copper_stairs",
+        "label": "Waxed Weathered Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "weathered_copper",
+        "label": "Weathered Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "weathered_cut_copper",
+        "label": "Weathered Cut Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "weathered_cut_copper_slab",
+        "label": "Weathered Cut Copper Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "weathered_cut_copper_stairs",
+        "label": "Weathered Cut Copper Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "white_candle",
+        "label": "White Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.17",
+        "id": "yellow_candle",
+        "label": "Yellow Candle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.18",
+        "id": "music_disc_-_lena_raine_-_otherside",
+        "label": "Music Disc - Lena Raine - otherside",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "goat_horn",
+        "label": "Goat Horn",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_sign",
+        "label": "Mangrove Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "acacia_boat_with_chest",
+        "label": "Acacia Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "birch_boat_with_chest",
+        "label": "Birch Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "bucket_of_tadpole",
+        "label": "Bucket of Tadpole",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "dark_oak_boat_with_chest",
+        "label": "Dark Oak Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "disc_fragment_-_music_disc_-_5",
+        "label": "Disc Fragment - Music Disc - 5",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "echo_shard",
+        "label": "Echo Shard",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "frogspawn",
+        "label": "Frogspawn",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "jungle_boat_with_chest",
+        "label": "Jungle Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_boat",
+        "label": "Mangrove Boat",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_boat_with_chest",
+        "label": "Mangrove Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_button",
+        "label": "Mangrove Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_door",
+        "label": "Mangrove Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_fence",
+        "label": "Mangrove Fence",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_fence_gate",
+        "label": "Mangrove Fence Gate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_leaves",
+        "label": "Mangrove Leaves",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_log",
+        "label": "Mangrove Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_planks",
+        "label": "Mangrove Planks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_pressure_plate",
+        "label": "Mangrove Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_propagule",
+        "label": "Mangrove Propagule",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_roots",
+        "label": "Mangrove Roots",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_slab",
+        "label": "Mangrove Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_stairs",
+        "label": "Mangrove Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_trapdoor",
+        "label": "Mangrove Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mangrove_wood",
+        "label": "Mangrove Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mud",
+        "label": "Mud",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mud_brick_slab",
+        "label": "Mud Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mud_brick_stairs",
+        "label": "Mud Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mud_brick_wall",
+        "label": "Mud Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "mud_bricks",
+        "label": "Mud Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "muddy_mangrove_roots",
+        "label": "Muddy Mangrove Roots",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "music_disc_-_samuel_åberg_-_5",
+        "label": "Music Disc - Samuel Åberg - 5",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "oak_boat_with_chest",
+        "label": "Oak Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "ochre_froglight",
+        "label": "Ochre Froglight",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "packed_mud",
+        "label": "Packed Mud",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "pearlescent_froglight",
+        "label": "Pearlescent Froglight",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "recovery_compass",
+        "label": "Recovery Compass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "reinforced_deepslate",
+        "label": "Reinforced Deepslate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "sculk",
+        "label": "Sculk",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "sculk_catalyst",
+        "label": "Sculk Catalyst",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "sculk_shrieker",
+        "label": "Sculk Shrieker",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "sculk_vein",
+        "label": "Sculk Vein",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "spruce_boat_with_chest",
+        "label": "Spruce Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "stripped_mangrove_log",
+        "label": "Stripped Mangrove Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "stripped_mangrove_wood",
+        "label": "Stripped Mangrove Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.19",
+        "id": "verdant_froglight",
+        "label": "Verdant Froglight",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "acacia_hanging_sign",
+        "label": "Acacia Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_hanging_sign",
+        "label": "Bamboo Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_sign",
+        "label": "Bamboo Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "birch_hanging_sign",
+        "label": "Birch Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_hanging_sign",
+        "label": "Cherry Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_sign",
+        "label": "Cherry Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "crimson_hanging_sign",
+        "label": "Crimson Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "dark_oak_hanging_sign",
+        "label": "Dark Oak Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "decorated_pot",
+        "label": "Decorated Pot",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "jungle_hanging_sign",
+        "label": "Jungle Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "mangrove_hanging_sign",
+        "label": "Mangrove Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "oak_hanging_sign",
+        "label": "Oak Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "spruce_hanging_sign",
+        "label": "Spruce Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "suspicious_gravel",
+        "label": "Suspicious Gravel",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "suspicious_sand",
+        "label": "Suspicious Sand",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "warped_hanging_sign",
+        "label": "Warped Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "angler_pottery_sherd",
+        "label": "Angler Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "archer_pottery_sherd",
+        "label": "Archer Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "arms_up_pottery_sherd",
+        "label": "Arms Up Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_button",
+        "label": "Bamboo Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_door",
+        "label": "Bamboo Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_fence",
+        "label": "Bamboo Fence",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_fence_gate",
+        "label": "Bamboo Fence Gate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_mosaic",
+        "label": "Bamboo Mosaic",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_mosaic_slab",
+        "label": "Bamboo Mosaic Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_mosaic_stairs",
+        "label": "Bamboo Mosaic Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_planks",
+        "label": "Bamboo Planks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_pressure_plate",
+        "label": "Bamboo Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_raft",
+        "label": "Bamboo Raft",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_raft_with_chest",
+        "label": "Bamboo Raft with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_slab",
+        "label": "Bamboo Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_stairs",
+        "label": "Bamboo Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "bamboo_trapdoor",
+        "label": "Bamboo Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "blade_pottery_sherd",
+        "label": "Blade Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "block_of_bamboo",
+        "label": "Block of Bamboo",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "block_of_stripped_bamboo",
+        "label": "Block of Stripped Bamboo",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "brewer_pottery_sherd",
+        "label": "Brewer Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "brush",
+        "label": "Brush",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "burn_pottery_sherd",
+        "label": "Burn Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "calibrated_sculk_sensor",
+        "label": "Calibrated Sculk Sensor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_boat",
+        "label": "Cherry Boat",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_boat_with_chest",
+        "label": "Cherry Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_button",
+        "label": "Cherry Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_door",
+        "label": "Cherry Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_fence",
+        "label": "Cherry Fence",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_fence_gate",
+        "label": "Cherry Fence Gate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_leaves",
+        "label": "Cherry Leaves",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_log",
+        "label": "Cherry Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_planks",
+        "label": "Cherry Planks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_pressure_plate",
+        "label": "Cherry Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_sapling",
+        "label": "Cherry Sapling",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_slab",
+        "label": "Cherry Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_stairs",
+        "label": "Cherry Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_trapdoor",
+        "label": "Cherry Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "cherry_wood",
+        "label": "Cherry Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "chiseled_bookshelf",
+        "label": "Chiseled Bookshelf",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "danger_pottery_sherd",
+        "label": "Danger Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "explorer_pottery_sherd",
+        "label": "Explorer Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "friend_pottery_sherd",
+        "label": "Friend Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "heart_pottery_sherd",
+        "label": "Heart Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "heartbreak_pottery_sherd",
+        "label": "Heartbreak Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "howl_pottery_sherd",
+        "label": "Howl Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "miner_pottery_sherd",
+        "label": "Miner Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "mourner_pottery_sherd",
+        "label": "Mourner Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "music_disc_-_aaron_cherof_-_relic",
+        "label": "Music Disc - Aaron Cherof - Relic",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "piglin_head",
+        "label": "Piglin Head",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "pink_petals",
+        "label": "Pink Petals",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "pitcher_plant",
+        "label": "Pitcher Plant",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "pitcher_pod",
+        "label": "Pitcher Pod",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "plenty_pottery_sherd",
+        "label": "Plenty Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "prize_pottery_sherd",
+        "label": "Prize Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "sheaf_pottery_sherd",
+        "label": "Sheaf Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "shelter_pottery_sherd",
+        "label": "Shelter Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "skull_pottery_sherd",
+        "label": "Skull Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "smithing_template",
+        "label": "Smithing Template",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "sniffer_egg",
+        "label": "Sniffer Egg",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "snort_pottery_sherd",
+        "label": "Snort Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "stripped_cherry_log",
+        "label": "Stripped Cherry Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "stripped_cherry_wood",
+        "label": "Stripped Cherry Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "torchflower",
+        "label": "Torchflower",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "torchflower_seeds",
+        "label": "Torchflower Seeds",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "armadillo_scute",
+        "label": "Armadillo Scute",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.20",
+        "id": "wolf_armor",
+        "label": "Wolf Armor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "black_bundle",
+        "label": "Black Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "blue_bundle",
+        "label": "Blue Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "brown_bundle",
+        "label": "Brown Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "bundle",
+        "label": "Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "cyan_bundle",
+        "label": "Cyan Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "gray_bundle",
+        "label": "Gray Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "green_bundle",
+        "label": "Green Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "light_blue_bundle",
+        "label": "Light Blue Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "light_gray_bundle",
+        "label": "Light Gray Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "lime_bundle",
+        "label": "Lime Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "magenta_bundle",
+        "label": "Magenta Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "orange_bundle",
+        "label": "Orange Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pink_bundle",
+        "label": "Pink Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "purple_bundle",
+        "label": "Purple Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "red_bundle",
+        "label": "Red Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "white_bundle",
+        "label": "White Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "yellow_bundle",
+        "label": "Yellow Bundle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_hanging_sign",
+        "label": "Pale Oak Hanging Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_sign",
+        "label": "Pale Oak Sign",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "banner_pattern_-_flow",
+        "label": "Banner Pattern - Flow",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "banner_pattern_-_guster",
+        "label": "Banner Pattern - Guster",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "breeze_rod",
+        "label": "Breeze Rod",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "chiseled_copper",
+        "label": "Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "chiseled_tuff",
+        "label": "Chiseled Tuff",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "chiseled_tuff_bricks",
+        "label": "Chiseled Tuff Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "copper_bulb",
+        "label": "Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "copper_door",
+        "label": "Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "copper_grate",
+        "label": "Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "copper_trapdoor",
+        "label": "Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "crafter",
+        "label": "Crafter",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "exposed_chiseled_copper",
+        "label": "Exposed Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "exposed_copper_bulb",
+        "label": "Exposed Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "exposed_copper_door",
+        "label": "Exposed Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "exposed_copper_grate",
+        "label": "Exposed Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "exposed_copper_trapdoor",
+        "label": "Exposed Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "flow_pottery_sherd",
+        "label": "Flow Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "guster_pottery_sherd",
+        "label": "Guster Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "heavy_core",
+        "label": "Heavy Core",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "mace",
+        "label": "Mace",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "music_disc_-_aaron_cherof_-_precipice",
+        "label": "Music Disc - Aaron Cherof - Precipice",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "music_disc_-_lena_raine_-_creator",
+        "label": "Music Disc - Lena Raine - Creator",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "music_disc_-_lena_raine_-_creator_(music_box)",
+        "label": "Music Disc - Lena Raine - Creator (Music Box)",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "ominous_bottle",
+        "label": "Ominous Bottle",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "ominous_trial_key",
+        "label": "Ominous Trial Key",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "oxidized_chiseled_copper",
+        "label": "Oxidized Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "oxidized_copper_bulb",
+        "label": "Oxidized Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "oxidized_copper_door",
+        "label": "Oxidized Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "oxidized_copper_grate",
+        "label": "Oxidized Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "oxidized_copper_trapdoor",
+        "label": "Oxidized Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "polished_tuff",
+        "label": "Polished Tuff",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "polished_tuff_slab",
+        "label": "Polished Tuff Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "polished_tuff_stairs",
+        "label": "Polished Tuff Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "polished_tuff_wall",
+        "label": "Polished Tuff Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "scrape_pottery_sherd",
+        "label": "Scrape Pottery Sherd",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "smithing_template",
+        "label": "Smithing Template",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "trial_key",
+        "label": "Trial Key",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "trial_spawner",
+        "label": "Trial Spawner",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_brick_slab",
+        "label": "Tuff Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_brick_stairs",
+        "label": "Tuff Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_brick_wall",
+        "label": "Tuff Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_bricks",
+        "label": "Tuff Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_slab",
+        "label": "Tuff Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_stairs",
+        "label": "Tuff Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tuff_wall",
+        "label": "Tuff Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "vault",
+        "label": "Vault",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_chiseled_copper",
+        "label": "Waxed Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_copper_bulb",
+        "label": "Waxed Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_copper_door",
+        "label": "Waxed Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_copper_grate",
+        "label": "Waxed Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_copper_trapdoor",
+        "label": "Waxed Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_exposed_chiseled_copper",
+        "label": "Waxed Exposed Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_exposed_copper_bulb",
+        "label": "Waxed Exposed Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_exposed_copper_door",
+        "label": "Waxed Exposed Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_exposed_copper_grate",
+        "label": "Waxed Exposed Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_exposed_copper_trapdoor",
+        "label": "Waxed Exposed Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_oxidized_chiseled_copper",
+        "label": "Waxed Oxidized Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_oxidized_copper_bulb",
+        "label": "Waxed Oxidized Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_oxidized_copper_door",
+        "label": "Waxed Oxidized Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_oxidized_copper_grate",
+        "label": "Waxed Oxidized Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_oxidized_copper_trapdoor",
+        "label": "Waxed Oxidized Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_weathered_chiseled_copper",
+        "label": "Waxed Weathered Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_weathered_copper_bulb",
+        "label": "Waxed Weathered Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_weathered_copper_door",
+        "label": "Waxed Weathered Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_weathered_copper_grate",
+        "label": "Waxed Weathered Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "waxed_weathered_copper_trapdoor",
+        "label": "Waxed Weathered Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "weathered_chiseled_copper",
+        "label": "Weathered Chiseled Copper",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "weathered_copper_bulb",
+        "label": "Weathered Copper Bulb",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "weathered_copper_door",
+        "label": "Weathered Copper Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "weathered_copper_grate",
+        "label": "Weathered Copper Grate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "weathered_copper_trapdoor",
+        "label": "Weathered Copper Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "wind_charge",
+        "label": "Wind Charge",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "bordure_indented_banner_pattern",
+        "label": "Bordure Indented Banner Pattern",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "field_masoned_banner_pattern",
+        "label": "Field Masoned Banner Pattern",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "block_of_resin",
+        "label": "Block of Resin",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "chiseled_resin_bricks",
+        "label": "Chiseled Resin Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "closed_eyeblossom",
+        "label": "Closed Eyeblossom",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "creaking_heart",
+        "label": "Creaking Heart",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "open_eyeblossom",
+        "label": "Open Eyeblossom",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_hanging_moss",
+        "label": "Pale Hanging Moss",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_moss_block",
+        "label": "Pale Moss Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_moss_carpet",
+        "label": "Pale Moss Carpet",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_boat",
+        "label": "Pale Oak Boat",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_boat_with_chest",
+        "label": "Pale Oak Boat with Chest",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_button",
+        "label": "Pale Oak Button",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_door",
+        "label": "Pale Oak Door",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_fence",
+        "label": "Pale Oak Fence",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_fence_gate",
+        "label": "Pale Oak Fence Gate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_leaves",
+        "label": "Pale Oak Leaves",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_log",
+        "label": "Pale Oak Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_planks",
+        "label": "Pale Oak Planks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_pressure_plate",
+        "label": "Pale Oak Pressure Plate",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_sapling",
+        "label": "Pale Oak Sapling",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_slab",
+        "label": "Pale Oak Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_stairs",
+        "label": "Pale Oak Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_trapdoor",
+        "label": "Pale Oak Trapdoor",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "pale_oak_wood",
+        "label": "Pale Oak Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "resin_brick",
+        "label": "Resin Brick",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "resin_brick_slab",
+        "label": "Resin Brick Slab",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "resin_brick_stairs",
+        "label": "Resin Brick Stairs",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "resin_brick_wall",
+        "label": "Resin Brick Wall",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "resin_bricks",
+        "label": "Resin Bricks",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "resin_clump",
+        "label": "Resin Clump",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "stripped_pale_oak_log",
+        "label": "Stripped Pale Oak Log",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "stripped_pale_oak_wood",
+        "label": "Stripped Pale Oak Wood",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "blue_egg",
+        "label": "Blue Egg",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "brown_egg",
+        "label": "Brown Egg",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "bush",
+        "label": "Bush",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "cactus_flower",
+        "label": "Cactus Flower",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "firefly_bush",
+        "label": "Firefly Bush",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "leaf_litter",
+        "label": "Leaf Litter",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "short_dry_grass",
+        "label": "Short Dry Grass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "tall_dry_grass",
+        "label": "Tall Dry Grass",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "test_block",
+        "label": "Test Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "test_instance_block",
+        "label": "Test Instance Block",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    },
+    {
+        "version": "1.21",
+        "id": "wildflowers",
+        "label": "Wildflowers",
+        "type": "",
+        "hardness": 0.0,
+        "tab": ""
+    }
+]

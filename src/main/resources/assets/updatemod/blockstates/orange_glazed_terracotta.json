@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": {
+      "model": "updatemod:orange_glazed_terracotta"
+    },
+    "facing=south": {
+      "model": "updatemod:orange_glazed_terracotta",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "updatemod:orange_glazed_terracotta",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "updatemod:orange_glazed_terracotta",
+      "y": 90
+    },
+    "facing=up": {
+      "model": "updatemod:orange_glazed_terracotta",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "updatemod:orange_glazed_terracotta",
+      "x": 90
+    }
+  }
+}

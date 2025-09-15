@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "updatemod:block/red_sign" }
+  }
+}

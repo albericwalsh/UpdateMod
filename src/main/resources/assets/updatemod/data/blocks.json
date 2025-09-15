@@ -1,0 +1,557 @@
+[
+  {
+    "version": "1.11",
+    "id": "black_shulker_box",
+    "label": "Black Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "blue_shulker_box",
+    "label": "Blue Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "brown_shulker_box",
+    "label": "Brown Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "cyan_shulker_box",
+    "label": "Cyan Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "gray_shulker_box",
+    "label": "Gray Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "green_shulker_box",
+    "label": "Green Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "light_blue_shulker_box",
+    "label": "Light Blue Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "light_gray_shulker_box",
+    "label": "Light Gray Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "lime_shulker_box",
+    "label": "Lime Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "magenta_shulker_box",
+    "label": "Magenta Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "orange_shulker_box",
+    "label": "Orange Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "pink_shulker_box",
+    "label": "Pink Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "purple_shulker_box",
+    "label": "Purple Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "red_shulker_box",
+    "label": "Red Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "white_shulker_box",
+    "label": "White Shulker Box",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "decorations"
+  },
+  {
+    "version": "1.11",
+    "id": "yellow_shulker_box",
+    "label": "Yellow Shulker Box",
+    "type": "",
+    "hardness": 0.0,
+    "tab": ""
+  },
+  {
+    "version": "1.11",
+    "id": "observer",
+    "label": "Observer",
+    "type": "facing_multi",
+    "hardness": 0.0,
+    "tab": "redstone"
+  },
+  {
+    "version": "1.12",
+    "id": "black_concrete",
+    "label": "Black Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "black_concrete_powder",
+    "label": "Black Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "black_glazed_terracotta",
+    "label": "Black Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "blue_concrete",
+    "label": "Blue Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "blue_concrete_powder",
+    "label": "Blue Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "blue_glazed_terracotta",
+    "label": "Blue Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "brown_concrete",
+    "label": "Brown Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "brown_concrete_powder",
+    "label": "Brown Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "brown_glazed_terracotta",
+    "label": "Brown Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "cyan_concrete",
+    "label": "Cyan Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "cyan_concrete_powder",
+    "label": "Cyan Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "cyan_glazed_terracotta",
+    "label": "Cyan Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "gray_concrete",
+    "label": "Gray Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "gray_concrete_powder",
+    "label": "Gray Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "gray_glazed_terracotta",
+    "label": "Gray Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "green_concrete",
+    "label": "Green Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "green_concrete_powder",
+    "label": "Green Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "green_glazed_terracotta",
+    "label": "Green Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "light_blue_concrete",
+    "label": "Light Blue Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "light_blue_concrete_powder",
+    "label": "Light Blue Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "light_blue_glazed_terracotta",
+    "label": "Light Blue Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "light_gray_concrete",
+    "label": "Light Gray Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "light_gray_concrete_powder",
+    "label": "Light Gray Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "light_gray_glazed_terracotta",
+    "label": "Light Gray Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "lime_concrete",
+    "label": "Lime Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "lime_concrete_powder",
+    "label": "Lime Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "lime_glazed_terracotta",
+    "label": "Lime Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "magenta_concrete",
+    "label": "Magenta Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "magenta_concrete_powder",
+    "label": "Magenta Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "magenta_glazed_terracotta",
+    "label": "Magenta Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "orange_concrete",
+    "label": "Orange Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "orange_concrete_powder",
+    "label": "Orange Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "orange_glazed_terracotta",
+    "label": "Orange Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "pink_concrete",
+    "label": "Pink Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "pink_concrete_powder",
+    "label": "Pink Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "pink_glazed_terracotta",
+    "label": "Pink Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "purple_concrete",
+    "label": "Purple Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "purple_concrete_powder",
+    "label": "Purple Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "purple_glazed_terracotta",
+    "label": "Purple Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "red_concrete",
+    "label": "Red Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "red_concrete_powder",
+    "label": "Red Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "red_glazed_terracotta",
+    "label": "Red Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "white_concrete",
+    "label": "White Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "white_concrete_powder",
+    "label": "White Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "white_glazed_terracotta",
+    "label": "White Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "yellow_concrete",
+    "label": "Yellow Concrete",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "yellow_concrete_powder",
+    "label": "Yellow Concrete Powder",
+    "type": "normal",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "version": "1.12",
+    "id": "yellow_glazed_terracotta",
+    "label": "Yellow Glazed Terracotta",
+    "type": "facing",
+    "hardness": 0.0,
+    "tab": "building_blocks"
+  },
+  {
+    "id": "copper_block",
+    "label": "Copper Block",
+    "type": "normal",
+    "hardness": 3.0,
+    "tab": "building_blocks"
+  },
+  {
+    "id": "exposed_copper",
+    "label": "Exposed Copper",
+    "type": "normal",
+    "hardness": 3.0,
+    "tab": "building_blocks"
+  },
+  {
+    "id": "weathered_copper",
+    "label": "Weathered Copper",
+    "type": "normal",
+    "hardness": 3.0,
+    "tab": "building_blocks"
+  },
+  {
+    "id": "oxidized_copper",
+    "label": "Oxidized Copper",
+    "type": "normal",
+    "hardness": 3.0,
+    "tab": "building_blocks"
+  },
+  {
+    "id": "amethyst_block",
+    "label": "Amethyst Block",
+    "type": "normal",
+    "hardness": 4.0,
+    "tab": "building_blocks"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "variant=basic_sign": { "model": "updatemod:basic_sign" },
+    "variant=black_basic_sign": { "model": "updatemod:black_basic_sign" },
+    "variant=black_sign": { "model": "updatemod:black_sign" },
+    "variant=blue_sign": { "model": "updatemod:blue_sign" },
+    "variant=green_sign": { "model": "updatemod:green_sign" },
+    "variant=purple_sign": { "model": "updatemod:purple_sign" },
+    "variant=red_sign": { "model": "updatemod:red_sign" },
+    "variant=yellow_basic_sign": { "model": "updatemod:yellow_basic_sign" },
+    "variant=yellow_sign": { "model": "updatemod:yellow_sign"}
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "updatemod:blocks/blue_shulker_box"
+  }
+}
