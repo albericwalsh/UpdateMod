@@ -8,6 +8,7 @@ import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.IOException;
@@ -254,15 +255,14 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         private final java.util.List<Map.Entry<String, SignIcons.IconData>> entries;
 
         public IconList(Minecraft mc, int screenWidth, int screenHeight, int top, int bottom, int slotHeight) {
-            // Ici, on met juste screenWidth/Height pour initialiser GuiSlot
             super(mc, screenWidth, screenHeight, top, bottom, slotHeight);
             this.mc = mc;
             this.entries = new java.util.ArrayList<>(SignIcons.getAllIconTokens().entrySet());
             this.setShowSelectionBox(false);
 
-            // ⚡ Nouvelle largeur réduite et collée à droite
-            int listWidth = 100; // largeur souhaitée (moins d’un quart)
-            this.left = screenWidth - listWidth - 20; // 20px de marge à droite
+            // largeur réduite et collée à droite
+            int listWidth = 80;
+            this.left = screenWidth - listWidth - 20; // 20px marge à droite
             this.right = screenWidth - 20;
         }
 
@@ -306,10 +306,13 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
             mc.getTextureManager().bindTexture(iconData.texture);
 
             int padding = 5; // marge intérieure
-            int iconX = this.left + padding; // icône dans la zone
-            int textX = iconX + 25;          // texte à droite de l’icône
+            int iconX = this.left + padding;
+            int textX = iconX + 25;
 
+            // Icône 20x20
             drawModalRectWithCustomSizedTexture(iconX, yPos, 0, 0, 20, 20, 20, 20);
+
+            // Texte à droite de l’icône
             GuiCustomSign.this.fontRendererObj.drawString(token, textX, yPos + 6, 0xFFFFFF);
         }
     }
