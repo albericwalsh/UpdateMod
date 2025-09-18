@@ -28,7 +28,10 @@ public class SignIcons {
         ICONS.put("[^]", new IconData(new ResourceLocation("updatemod", "textures/icons/arrow_up.png"), true));
         ICONS.put("[HW]", new IconData(new ResourceLocation("updatemod", "textures/icons/hightway.png"), false));
         ICONS.put("[!PL]", new IconData(new ResourceLocation("updatemod", "textures/icons/no_truck.png"), false));
-        // Ajouter d'autres icônes ici
+        ICONS.put("[PL]", new IconData(new ResourceLocation("updatemod", "textures/icons/truck.png"), false));
+        ICONS.put("[AP]", new IconData(new ResourceLocation("updatemod", "textures/icons/airport.png"), false));
+        ICONS.put("[EX]", new IconData(new ResourceLocation("updatemod", "textures/icons/exit.png"), false));
+// Ajouter d'autres icônes ici
     }
 
     public static boolean isIcon(String token) {
@@ -42,6 +45,10 @@ public class SignIcons {
     public static ResourceLocation getIcon(String token) {
         IconData data = ICONS.get(token);
         return data != null ? data.texture : null;
+    }
+
+    public static Map<String, IconData> getAllIconTokens() {
+        return ICONS;
     }
 
     /**

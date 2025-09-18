@@ -16,19 +16,27 @@ public class PacketUpdateSign implements IMessage {
     private BlockPos pos;
     private String[] lines = new String[4];
     private int variant;
+    private int textSpan;   // ajout
+    private int align;      // ajout si nécessaire
+
 
     public PacketUpdateSign() {} // Obligatoire
 
-    public PacketUpdateSign(BlockPos pos, String[] lines, int variant) {
+    public PacketUpdateSign(BlockPos pos, String[] lines, int variant, int textSpan, int align) {
         this.pos = pos;
         this.lines = lines;
         this.variant = variant;
+        this.textSpan = textSpan;
+        this.align = align;
     }
+
 
     @Override
     public void toBytes(ByteBuf buf) {
         buf.writeLong(pos.toLong());
         buf.writeInt(variant);
+        buf.writeInt(textSpan);  // ajout
+        buf.writeInt(align);     // ajout si besoin
         for (int i = 0; i < 4; i++) {
             byte[] data = lines[i].getBytes();
             buf.writeInt(data.length);
@@ -40,6 +48,8 @@ public class PacketUpdateSign implements IMessage {
     public void fromBytes(ByteBuf buf) {
         pos = BlockPos.fromLong(buf.readLong());
         variant = buf.readInt();
+        textSpan = buf.readInt();   // ajout
+        align = buf.readInt();      // ajout si besoin
         for (int i = 0; i < 4; i++) {
             int len = buf.readInt();
             byte[] data = new byte[len];
@@ -47,6 +57,7 @@ public class PacketUpdateSign implements IMessage {
             lines[i] = new String(data);
         }
     }
+
 
     public static class Handler implements IMessageHandler<PacketUpdateSign, IMessage> {
         @Override
@@ -69,6 +80,13 @@ public class PacketUpdateSign implements IMessage {
                     if (preset != null) {
                         sign.setLineColor(preset.getLineColors());
                         sign.setLineHighlightColor(preset.getLineHighlightColors());
+                    }
+
+                    sign.setTextSpan(message.textSpan);
+                    switch (message.align) {
+                        case 0: sign.setAlignNoUpdate(AbstractTileEntitySign.Align.LEFT); break;
+                        case 2: sign.setAlignNoUpdate(AbstractTileEntitySign.Align.RIGHT); break;
+                        default: sign.setAlignNoUpdate(AbstractTileEntitySign.Align.CENTER); break;
                     }
 
                     sign.markDirty();

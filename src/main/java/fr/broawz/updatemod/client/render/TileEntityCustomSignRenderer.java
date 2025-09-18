@@ -7,7 +7,6 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
@@ -25,11 +24,37 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
         GlStateManager.translate(x + 0.5F, y + 0.5F, z + 0.5F);
         EnumFacing textFacing = te.getFacing().getOpposite();
 
+        // Offset selon alignement
+        float offsetX;
+        switch (te.getAlign()) {
+            case LEFT:
+                offsetX = -0.5F;
+                break;
+            case RIGHT:
+                offsetX = te.getTextSpan() - 0.5F;
+                break;
+            default:
+                offsetX = te.getTextSpan() / 2F - 0.5F;
+                break;
+        }
+
+        // Translation selon face
         switch (textFacing) {
-            case NORTH: GlStateManager.translate(0, 0, -0.498); break;
-            case SOUTH: GlStateManager.translate(0, 0, 0.498); GlStateManager.rotate(180, 0, 1, 0); break;
-            case WEST:  GlStateManager.translate(-0.498, 0, 0); GlStateManager.rotate(90, 0, 1, 0); break;
-            case EAST:  GlStateManager.translate(0.498, 0, 0); GlStateManager.rotate(-90, 0, 1, 0); break;
+            case NORTH:
+                GlStateManager.translate(offsetX, 0, -0.498);
+                break;
+            case SOUTH:
+                GlStateManager.translate(-offsetX, 0, 0.498);
+                GlStateManager.rotate(180, 0, 1, 0);
+                break;
+            case WEST:
+                GlStateManager.translate(-0.498, 0, offsetX);
+                GlStateManager.rotate(90, 0, 1, 0);
+                break;
+            case EAST:
+                GlStateManager.translate(0.498, 0, -offsetX);
+                GlStateManager.rotate(-90, 0, 1, 0);
+                break;
         }
 
         GlStateManager.scale(te.getTextScale(), -te.getTextScale(), te.getTextScale());
@@ -42,71 +67,75 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             int highlightHeight = te.getHighlightHeight()[i];
             int height = fontRenderer.FONT_HEIGHT;
 
-            // --- surlignage ---
-            if (highlight != 0) {
-                GlStateManager.pushMatrix();
-                GlStateManager.translate(0, 0, -0.001F);
-                int width = fontRenderer.getStringWidth(line);
-                int top = (i * 10 - 20 - highlightHeight / 2 + height / 2) + 1;
-                int bottom = top + highlightHeight;
-                drawRect(-width / 2 - 1, top, width / 2 + 1, bottom, color(highlight));
-                GlStateManager.popMatrix();
-            }
-
-            // --- découper ligne en tokens texte + icônes ---
+            // Découper ligne en tokens texte + icônes
             List<String> tokens = SignIcons.parseLine(line);
 
-            // largeur totale pour centrer
-            int totalWidth = 0;
+            // Calculer largeur totale de la ligne (texte + icônes)
+            int lineWidth = 0;
             for (String token : tokens) {
-                if (SignIcons.isIcon(token)) totalWidth += height + 2;
-                else totalWidth += fontRenderer.getStringWidth(token);
+                if (SignIcons.isIcon(token)) {
+                    lineWidth += height + 2; // largeur icône + spacing
+                } else {
+                    lineWidth += fontRenderer.getStringWidth(token);
+                }
             }
 
-            int cursorX = -totalWidth / 2;
+            // Calculer curseur initial selon alignement
+            int cursorXStart;
+            switch (te.getAlign()) {
+                case LEFT:
+                    cursorXStart = 0;
+                    break;
+                case CENTER:
+                    cursorXStart = -lineWidth / 2;
+                    break;
+                case RIGHT:
+                    cursorXStart = -lineWidth;
+                    break;
+                default:
+                    cursorXStart = 0;
+                    break;
+            }
+
+            // --- Surlignage ---
+            if (highlight != 0) {
+                GlStateManager.pushMatrix();
+                GlStateManager.translate(0, 0, -0.001F); // léger décalage Z
+                int top = (i * 10 - 20 - highlightHeight / 2 + height / 2) + 1;
+                int bottom = top + highlightHeight;
+                drawRect(cursorXStart, top, cursorXStart + lineWidth, bottom, color(highlight));
+                GlStateManager.popMatrix();
+            }
 
             GlStateManager.enableAlpha();
             GlStateManager.enableBlend();
 
-            // ---- première passe : icônes ----
+            // Dessiner texte + icônes
+            int cursorX = cursorXStart;
             for (String token : tokens) {
                 if (SignIcons.isIcon(token)) {
-                    ResourceLocation iconTex = SignIcons.getIcon(token);
-                    if (iconTex != null) {
-                        SignIcons.IconData data = SignIcons.getIconData(token);
-                        if (data != null) {
-                            Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
-
-                            // applique la couleur seulement si pas trop foncé et si pas noColorBend
-                            if (data.ColorBend) {
-                                float r = ((color >> 16) & 0xFF) / 255f;
-                                float g = ((color >> 8) & 0xFF) / 255f;
-                                float b = (color & 0xFF) / 255f;
-                                GlStateManager.color(r, g, b, 1.0F);
-                            } else {
-                                GlStateManager.color(1f, 1f, 1f, 1f); // couleur blanche par défaut
-                            }
-
-                            int iconSize = height;
-                            drawModalRectWithCustomSizedTexture(cursorX, i * 10 - 20, 0, 0, iconSize, iconSize, iconSize, iconSize);
+                    SignIcons.IconData data = SignIcons.getIconData(token);
+                    if (data != null) {
+                        Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
+                        if (data.ColorBend) {
+                            float r = ((color >> 16) & 0xFF) / 255f;
+                            float g = ((color >> 8) & 0xFF) / 255f;
+                            float b = (color & 0xFF) / 255f;
+                            GlStateManager.color(r, g, b, 1.0F);
+                        } else {
+                            GlStateManager.color(1f, 1f, 1f, 1f);
                         }
+                        drawModalRectWithCustomSizedTexture(cursorX, i * 10 - 20, 0, 0, height, height, height, height);
                     }
-                }
-                if (SignIcons.isIcon(token)) cursorX += height + 2;
-                else cursorX += fontRenderer.getStringWidth(token);
-            }
-
-            // ---- deuxième passe : texte ----
-            cursorX = -totalWidth / 2;
-            for (String token : tokens) {
-                if (!SignIcons.isIcon(token)) {
+                    cursorX += height + 2;
+                } else {
                     fontRenderer.drawString(token, cursorX, i * 10 - 20, color);
+                    cursorX += fontRenderer.getStringWidth(token);
                 }
-                cursorX += SignIcons.isIcon(token) ? height + 2 : fontRenderer.getStringWidth(token);
             }
 
             GlStateManager.disableBlend();
-            GlStateManager.color(1f, 1f, 1f, 1f); // reset couleur
+            GlStateManager.color(1f, 1f, 1f, 1f);
         }
 
         GlStateManager.popMatrix();
