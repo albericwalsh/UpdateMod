@@ -9,7 +9,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
 import org.lwjgl.input.Keyboard;
 
-
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.IOException;
 import java.util.Map;
@@ -23,9 +22,11 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
     private GuiSlider textSpanSlider;
     private int focusedTextField = 0;
 
-    // Stockage temporaire du texte et du slider pendant le GUI
     private String[] guiLines;
     private int guiTextSpan;
+
+    // Nouvelle liste scrollable
+    private IconList iconList;
 
     public GuiCustomSign(AbstractTileEntitySign sign) {
         this.sign = sign;
@@ -40,7 +41,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         int linesCount = guiLines.length;
         int leftWidth = (int) (this.width * 0.75);
 
-        // --- Partie propriétés sous le titre ---
         int titleY = 10;
         int propY = titleY + 20;
         int spacing = 10;
@@ -59,19 +59,12 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
             @Override
             @ParametersAreNonnullByDefault
             protected void mouseDragged(Minecraft mc, int mouseX, int mouseY) {
-                super.mouseDragged(mc, mouseX, mouseY); // garder l'affichage du slider
-
-                // Convertir la valeur flottante en entier 1..5
+                super.mouseDragged(mc, mouseX, mouseY);
                 int intValue = Math.round(this.getSliderValue() * 4) + 1;
-                guiTextSpan = (intValue-1)/4;
-                // Mettre à jour le TileEntity directement (pour voir le changement en temps réel dans le monde)
-
-                // Repositionner le slider exactement sur ce cran
+                guiTextSpan = (intValue - 1) / 4;
                 this.setSliderValue((intValue - 1) / 4.0f, true);
 
-                // Limiter le texte dans les textFields
-                int maxChars = guiTextSpan * 10; // nombre max de caractères par bloc
-                System.out.println("\u001B[32m[INFO] - Max chars: " + maxChars +"\u001B[0m");
+                int maxChars = guiTextSpan * 10;
                 for (int i = 0; i < textFields.length; i++) {
                     textFields[i].setMaxStringLength(maxChars);
                     String text = textFields[i].getText();
@@ -84,12 +77,9 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
             }
         };
 
-
-
         this.buttonList.add(textSpanSlider);
         currentX += sliderWidth + spacing;
 
-        // --- Boutons d'alignement ---
         int btnWidth = 30;
         alignLeft = new GuiButton(1, currentX, propY, btnWidth, 20, "|=");
         currentX += btnWidth + spacing;
@@ -102,7 +92,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
 
         updateAlignButtons();
 
-        // --- Lignes de texte ---
         int startY = propY + 40;
         textFields = new GuiTextField[linesCount];
         for (int i = 0; i < linesCount; i++) {
@@ -114,6 +103,15 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
             textFields[0].setFocused(true);
             focusedTextField = 0;
         }
+
+        // --- Création de la liste scrollable des icônes ---
+        int listWidth = 80; // largeur de la liste
+        int listLeft = this.width - listWidth -20; // à droite avec une marge de 20px
+        int listRight = this.width; // bord droit de l'écran
+
+        iconList = new IconList(this.mc, listRight - listLeft, this.height, 40, this.height - 40, 24);
+        iconList.left = listLeft;
+        iconList.right = listRight;
     }
 
     private void updateAlignButtons() {
@@ -127,18 +125,10 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
     protected void actionPerformed(GuiButton button) {
         if (button == alignLeft) {
             sign.setAlign(AbstractTileEntitySign.Align.LEFT);
-            System.out.println("\u001B[32m[INFO] Align set to LEFT\u001B[0m");
-        }
-        else if (button == alignCenter) {
+        } else if (button == alignCenter) {
             sign.setAlign(AbstractTileEntitySign.Align.CENTER);
-            System.out.println("\u001B[32m[INFO] Align set to CENTER\u001B[0m");
-        }
-        else if (button == alignRight) {
+        } else if (button == alignRight) {
             sign.setAlign(AbstractTileEntitySign.Align.RIGHT);
-            System.out.println("\u001B[32m[INFO] Align set to RIGHT\u001B[0m");
-        } else {
-            System.out.println("\u001B[33m[WARN] Unknown button ID: " + button.id + "\u001B[0m");
-            return; // bouton non géré
         }
         updateAlignButtons();
     }
@@ -151,19 +141,14 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
 
             if (current.textboxKeyTyped(typedChar, keyCode)) {
                 String after = current.getText();
-
-                // nombre max de caractères = nombre de blocs * 10
-                int maxChars = guiTextSpan * 10; // nombre max de caractères par bloc
+                int maxChars = guiTextSpan * 10;
                 if (after.length() > maxChars) {
                     current.setText(before);
                 } else {
                     guiLines[focusedTextField] = after;
                 }
-
             }
 
-
-            // Navigation TAB / flèches
             if (keyCode == Keyboard.KEY_TAB) {
                 current.setFocused(false);
                 if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
@@ -186,7 +171,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         if (keyCode == Keyboard.KEY_ESCAPE || keyCode == Keyboard.KEY_RETURN) closeGui();
     }
 
-
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
         for (int i = 0; i < textFields.length; i++) {
@@ -197,35 +181,23 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
     }
 
     @Override
+    public void handleMouseInput() throws IOException {
+        super.handleMouseInput();
+        iconList.handleMouseInput();
+    }
+
+    @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         drawDefaultBackground();
         fontRendererObj.drawString("Panel: " + sign.getDisplayName(), 10, 10, 0xFFFFFF);
 
-        // Dessiner les champs texte
         for (GuiTextField tf : textFields) tf.drawTextBox();
 
-        // --- Panel icônes à droite ---
-        int panelX = (int) (this.width * 0.75) + 10;
-        int panelY = 40;
-        int iconSize = 20;
-        int spacing = 5;
-        int yOffset = 0;
-
-        for (Map.Entry<String, SignIcons.IconData> entry : SignIcons.getAllIconTokens().entrySet()) {
-            String token = entry.getKey();
-            SignIcons.IconData iconData = entry.getValue();
-
-            Minecraft.getMinecraft().getTextureManager().bindTexture(iconData.texture);
-            drawModalRectWithCustomSizedTexture(panelX, panelY + yOffset, 0, 0, iconSize, iconSize, iconSize, iconSize);
-
-            fontRendererObj.drawString(token, panelX + iconSize + 5, panelY + yOffset + (iconSize - fontRendererObj.FONT_HEIGHT) / 2, 0xFFFFFF);
-
-            yOffset += iconSize + spacing;
-        }
+        // Liste scrollable des icônes
+        iconList.drawScreen(mouseX, mouseY, partialTicks);
 
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
-
 
     @Override
     public void updateScreen() {
@@ -239,33 +211,16 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
     }
 
     private void applyChanges() {
-        // --- Mettre à jour le TileEntity localement ---
         for (int i = 0; i < guiLines.length; i++) {
             sign.setLine(i, guiLines[i]);
         }
         sign.setTextSpan(guiTextSpan);
         switch (getAlignFromButtons()) {
-            case 0:
-                sign.setAlign(AbstractTileEntitySign.Align.LEFT);
-                break;
-            case 1:
-                sign.setAlign(AbstractTileEntitySign.Align.CENTER);
-                break;
-            case 2:
-                sign.setAlign(AbstractTileEntitySign.Align.RIGHT);
-                break;
+            case 0: sign.setAlign(AbstractTileEntitySign.Align.LEFT); break;
+            case 1: sign.setAlign(AbstractTileEntitySign.Align.CENTER); break;
+            case 2: sign.setAlign(AbstractTileEntitySign.Align.RIGHT); break;
         }
 
-
-        System.out.println("--------------------------------------------------");
-        System.out.println("Sign updated: ");
-        for (String line : guiLines) {
-            System.out.println(" - " + line);
-        }
-        System.out.println("Text span: " + guiTextSpan);
-        System.out.println("Align: " + sign.getAlign());
-        System.out.println("---------------------------------------------------");
-        // --- Envoyer au serveur ---
         PacketUpdateSign packet = new PacketUpdateSign(
                 sign.getPos(),
                 guiLines,
@@ -280,18 +235,82 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         if (alignRight.enabled && alignCenter.enabled) return 0;
         if (alignRight.enabled && alignLeft.enabled) return 1;
         else if (alignLeft.enabled && alignCenter.enabled) return 2;
-        return 1; // par défaut
+        return 1;
     }
-
-
 
     private void closeGui() {
         mc.displayGuiScreen(null);
-        // Exemple quand tu quittes le GUI
     }
 
-    // GuiResponder (non utilisés ici)
     @Override public void setEntryValue(int id, boolean value) {}
     @Override public void setEntryValue(int id, float value) {}
     @Override @ParametersAreNonnullByDefault public void setEntryValue(int id, String value) {}
+
+    // =========================
+    // Classe interne : IconList
+    // =========================
+    class IconList extends GuiSlot {
+        private final Minecraft mc;
+        private final java.util.List<Map.Entry<String, SignIcons.IconData>> entries;
+
+        public IconList(Minecraft mc, int screenWidth, int screenHeight, int top, int bottom, int slotHeight) {
+            // Ici, on met juste screenWidth/Height pour initialiser GuiSlot
+            super(mc, screenWidth, screenHeight, top, bottom, slotHeight);
+            this.mc = mc;
+            this.entries = new java.util.ArrayList<>(SignIcons.getAllIconTokens().entrySet());
+            this.setShowSelectionBox(false);
+
+            // ⚡ Nouvelle largeur réduite et collée à droite
+            int listWidth = 100; // largeur souhaitée (moins d’un quart)
+            this.left = screenWidth - listWidth - 20; // 20px de marge à droite
+            this.right = screenWidth - 20;
+        }
+
+        @Override
+        protected int getSize() {
+            return entries.size();
+        }
+
+        @Override
+        protected void elementClicked(int index, boolean doubleClick, int mouseX, int mouseY) {
+            if (index >= 0 && index < entries.size() && textFields.length > 0) {
+                String token = entries.get(index).getKey();
+                textFields[focusedTextField].writeText(token);
+            }
+        }
+
+        @Override
+        protected boolean isSelected(int index) {
+            return false;
+        }
+
+        @Override
+        protected int getScrollBarX() {
+            return this.right - 6; // scrollbar collée à droite
+        }
+
+        @Override
+        protected void drawBackground() {
+            GuiCustomSign.this.drawGradientRect(this.left, this.top, this.right, this.bottom,
+                    0xC0101010, 0xD0101010); // fond limité à la zone
+        }
+
+        @Override
+        protected void drawSlot(int entryID, int insideLeft, int yPos, int insideSlotHeight, int mouseXIn, int mouseYIn) {
+            if (entryID < 0 || entryID >= entries.size()) return;
+
+            Map.Entry<String, SignIcons.IconData> entry = entries.get(entryID);
+            String token = entry.getKey();
+            SignIcons.IconData iconData = entry.getValue();
+
+            mc.getTextureManager().bindTexture(iconData.texture);
+
+            int padding = 5; // marge intérieure
+            int iconX = this.left + padding; // icône dans la zone
+            int textX = iconX + 25;          // texte à droite de l’icône
+
+            drawModalRectWithCustomSizedTexture(iconX, yPos, 0, 0, 20, 20, 20, 20);
+            GuiCustomSign.this.fontRendererObj.drawString(token, textX, yPos + 6, 0xFFFFFF);
+        }
+    }
 }

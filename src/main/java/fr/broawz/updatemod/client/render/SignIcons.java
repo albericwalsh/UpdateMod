@@ -30,7 +30,7 @@ public class SignIcons {
         ICONS.put("[!PL]", new IconData(new ResourceLocation("updatemod", "textures/icons/no_truck.png"), false));
         ICONS.put("[PL]", new IconData(new ResourceLocation("updatemod", "textures/icons/truck.png"), false));
         ICONS.put("[AP]", new IconData(new ResourceLocation("updatemod", "textures/icons/airport.png"), false));
-        ICONS.put("[EX]", new IconData(new ResourceLocation("updatemod", "textures/icons/exit.png"), false));
+        ICONS.put("[EX]", new IconData(new ResourceLocation("updatemod", "textures/icons/exit.png"), true));
 // Ajouter d'autres icônes ici
     }
 
