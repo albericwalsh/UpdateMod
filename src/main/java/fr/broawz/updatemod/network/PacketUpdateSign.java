@@ -1,28 +1,77 @@
 package fr.broawz.updatemod.network;
 
+/*
+ * Imports internes
+ */
 import fr.broawz.updatemod.blocks.AbstractTileEntitySign;
 import fr.broawz.updatemod.blocks.SignPreset;
 import fr.broawz.updatemod.blocks.blocksign.BlockBasicSign;
+
+/*
+ * Imports réseau / Minecraft
+ */
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
+/*
+ * Packet réseau : mise à jour d’un panneau
+ * ---------------------------------------
+ * Sens principal :
+ *  CLIENT → SERVEUR
+ * (édition via GUI)
+ *
+ * Synchronisation secondaire :
+ *  SERVEUR → CLIENT
+ */
 public class PacketUpdateSign implements IMessage {
+
+    /*
+     * Position du panneau dans le monde
+     */
     private BlockPos pos;
+
+    /*
+     * Contenu des 4 lignes
+     */
     private String[] lines = new String[4];
+
+    /*
+     * Variant / metadata du panneau
+     */
     private int variant;
-    private int textSpan;   // ajout
-    private int align;      // ajout si nécessaire
 
+    /*
+     * Options supplémentaires de rendu
+     */
+    private int textSpan;
+    private int align;
 
-    public PacketUpdateSign() {} // Obligatoire
+    /*
+     * Constructeur vide
+     * -----------------
+     * OBLIGATOIRE pour Forge (désérialisation)
+     */
+    public PacketUpdateSign() {}
 
-    public PacketUpdateSign(BlockPos pos, String[] lines, int variant, int textSpan, int align) {
+    /*
+     * Constructeur utilisé côté client
+     * --------------------------------
+     * Envoi des données éditées
+     */
+    public PacketUpdateSign(
+            BlockPos pos,
+            String[] lines,
+            int variant,
+            int textSpan,
+            int align
+    ) {
         this.pos = pos;
         this.lines = lines;
         this.variant = variant;
@@ -30,99 +79,174 @@ public class PacketUpdateSign implements IMessage {
         this.align = align;
     }
 
-
+    /*
+     * Sérialisation → ByteBuf
+     * ----------------------
+     * Ordre STRICT (doit correspondre à fromBytes)
+     */
     @Override
     public void toBytes(ByteBuf buf) {
+
+        // Position compacte
         buf.writeLong(pos.toLong());
+
         buf.writeInt(variant);
-        buf.writeInt(textSpan);  // ajout
-        buf.writeInt(align);     // ajout si besoin
+        buf.writeInt(textSpan);
+        buf.writeInt(align);
+
+        // 4 lignes de texte
         for (int i = 0; i < 4; i++) {
-            byte[] data = lines[i].getBytes();
-            buf.writeInt(data.length);
-            buf.writeBytes(data);
+            String s = lines[i] == null ? "" : lines[i];
+            ByteBufUtils.writeUTF8String(buf, s);
         }
     }
 
+    /*
+     * Désérialisation ← ByteBuf
+     */
     @Override
     public void fromBytes(ByteBuf buf) {
+
         pos = BlockPos.fromLong(buf.readLong());
+
         variant = buf.readInt();
-        textSpan = buf.readInt();   // ajout
-        align = buf.readInt();      // ajout si besoin
+        textSpan = buf.readInt();
+        align = buf.readInt();
+
         for (int i = 0; i < 4; i++) {
-            int len = buf.readInt();
-            byte[] data = new byte[len];
-            buf.readBytes(data);
-            lines[i] = new String(data);
+            lines[i] = ByteBufUtils.readUTF8String(buf);
         }
     }
 
+    /*
+     * Handler du packet
+     * -----------------
+     * Exécuté côté SERVEUR ou CLIENT
+     * selon le contexte
+     */
+    public static class Handler
+            implements IMessageHandler<PacketUpdateSign, IMessage> {
 
-    public static class Handler implements IMessageHandler<PacketUpdateSign, IMessage> {
         @Override
         public IMessage onMessage(PacketUpdateSign message, MessageContext ctx) {
+
+            /*
+             * =====================
+             * CÔTÉ SERVEUR
+             * =====================
+             */
             if (ctx.side.isServer()) {
-                // côté serveur, récupérer le monde et le joueur
-                World world = ctx.getServerHandler().playerEntity.worldObj;
+
+                // Monde serveur du joueur ayant envoyé le packet
+                World world = ctx.getServerHandler()
+                        .playerEntity
+                        .worldObj;
+
                 TileEntity te = world.getTileEntity(message.pos);
 
                 if (te instanceof AbstractTileEntitySign) {
-                    AbstractTileEntitySign sign = (AbstractTileEntitySign) te;
 
+                    AbstractTileEntitySign sign =
+                            (AbstractTileEntitySign) te;
+
+                    // Mise à jour du texte
                     for (int i = 0; i < 4; i++) {
                         sign.setLine(i, message.lines[i]);
                     }
 
+                    // Variant (metadata logique)
                     sign.setVariant(message.variant);
 
-                    SignPreset preset = BlockBasicSign.getPreset(message.variant);
+                    // Application du preset visuel
+                    SignPreset preset =
+                            BlockBasicSign.getPreset(message.variant);
+
                     if (preset != null) {
                         sign.setLineColor(preset.getLineColors());
-                        sign.setLineHighlightColor(preset.getLineHighlightColors());
+                        sign.setLineHighlightColor(
+                                preset.getLineHighlightColors()
+                        );
                     }
 
+                    // Options de rendu
                     sign.setTextSpan(message.textSpan);
+
                     switch (message.align) {
-                        case 0: sign.setAlignNoUpdate(AbstractTileEntitySign.Align.LEFT); break;
-                        case 2: sign.setAlignNoUpdate(AbstractTileEntitySign.Align.RIGHT); break;
-                        default: sign.setAlignNoUpdate(AbstractTileEntitySign.Align.CENTER); break;
+                        case 0:
+                            sign.setAlignNoUpdate(
+                                    AbstractTileEntitySign.Align.LEFT
+                            );
+                            break;
+                        case 2:
+                            sign.setAlignNoUpdate(
+                                    AbstractTileEntitySign.Align.RIGHT
+                            );
+                            break;
+                        default:
+                            sign.setAlignNoUpdate(
+                                    AbstractTileEntitySign.Align.CENTER
+                            );
+                            break;
                     }
 
+                    // Marque la TileEntity comme modifiée
                     sign.markDirty();
-                    world.markBlockRangeForRenderUpdate(te.getPos(), te.getPos());
+
+                    // Force la mise à jour du rendu
+                    world.markBlockRangeForRenderUpdate(
+                            te.getPos(),
+                            te.getPos()
+                    );
                 }
+
+                /*
+                 * =====================
+                 * CÔTÉ CLIENT
+                 * =====================
+                 */
             } else {
-                // côté client
-                Minecraft.getMinecraft().addScheduledTask(new Runnable() {
-                    @Override
-                    public void run() {
-                        World world = Minecraft.getMinecraft().theWorld;
-                        if (world == null) return;
 
-                        TileEntity te = world.getTileEntity(message.pos);
-                        if (te instanceof AbstractTileEntitySign) {
-                            AbstractTileEntitySign sign = (AbstractTileEntitySign) te;
+                // Important : exécution sur le thread client
+                Minecraft.getMinecraft().addScheduledTask(() -> {
 
-                            for (int i = 0; i < 4; i++) {
-                                sign.setLine(i, message.lines[i]);
-                            }
+                    World world =
+                            Minecraft.getMinecraft().theWorld;
+                    if (world == null) return;
 
-                            sign.setVariant(message.variant);
+                    TileEntity te =
+                            world.getTileEntity(message.pos);
 
-                            SignPreset preset = BlockBasicSign.getPreset(message.variant);
-                            if (preset != null) {
-                                sign.setLineColor(preset.getLineColors());
-                                sign.setLineHighlightColor(preset.getLineHighlightColors());
-                            }
+                    if (te instanceof AbstractTileEntitySign) {
 
-                            sign.markDirty();
-                            world.markBlockRangeForRenderUpdate(te.getPos(), te.getPos());
+                        AbstractTileEntitySign sign =
+                                (AbstractTileEntitySign) te;
+
+                        for (int i = 0; i < 4; i++) {
+                            sign.setLine(i, message.lines[i]);
                         }
+
+                        sign.setVariant(message.variant);
+
+                        SignPreset preset =
+                                BlockBasicSign.getPreset(message.variant);
+
+                        if (preset != null) {
+                            sign.setLineColor(preset.getLineColors());
+                            sign.setLineHighlightColor(
+                                    preset.getLineHighlightColors()
+                            );
+                        }
+
+                        sign.markDirty();
+                        world.markBlockRangeForRenderUpdate(
+                                te.getPos(),
+                                te.getPos()
+                        );
                     }
                 });
             }
-            return null;
+
+            return null; // Pas de packet réponse
         }
     }
 }

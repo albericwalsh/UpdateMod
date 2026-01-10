@@ -1,0 +1,157 @@
+@startuml
+' ======================================
+' Update Mod - UML Global
+' ======================================
+
+package fr.broawz.updatemod {
+
+    ' -------------------
+    ' References & Utils
+    ' -------------------
+    class References {
+        +MODID: String
+        +NAME: String
+        +VERSION: String
+        +ACCEPTABLE_REMOTE_VERSION: String
+        +CLIENT_PROXY: String
+        +SERVER_PROXY: String
+        +UPDATED_MOD: CreativeTabs
+    }
+
+    class tools {
+        +FIXED_SPACE_WIDTH: int
+        +color(hexRGB: int): int
+        +fixSpaces(input: String): String
+        +drawColoredQuadRaw(x1:int, y1:int, x2:int, y2:int, r:float, g:float, b:float)
+    }
+
+    class GuiHandler {
+        +getServerGuiElement(...)
+        +getClientGuiElement(...)
+    }
+
+    class UpdatedCreativeTabs {
+        +UpdatedCreativeTabs(label: String)
+        +getTabIconItem(): Item
+        +getTabLabel(): String
+    }
+
+    ' -------------------
+    ' Blocks / TileEntities
+    ' -------------------
+    abstract class AbstractBlockSign {
+        +FULL_BLOCK: AxisAlignedBB
+        +VARIANT: PropertyEnum<SignVariant>
+        +AbstractBlockSign()
+        +getStateFromMeta(meta: int): IBlockState
+        +getMetaFromState(state: IBlockState): int
+        +getActualState(state: IBlockState, world: IBlockAccess, pos: BlockPos): IBlockState
+        +onBlockPlacedBy(world: World, pos: BlockPos, state: IBlockState, placer: EntityLivingBase, stack: ItemStack)
+    }
+
+    class AbstractTileEntitySign {
+        +getLines(): String[4]
+        +setLine(index:int, text:String)
+        +getTextColor(): int[4]
+        +getLineHighlightColor(): int[4]
+        +getFontName(): String[4]
+        +getFontSize(): int[4]
+        +getAlign(): Align
+        +setAlign(Align)
+        +getTextSpan(): int
+        +setTextSpan(int)
+        +getVariant(): SignVariant
+        +setVariant(int)
+        +getFacing(): EnumFacing
+        +setFacing(EnumFacing)
+        +markDirty()
+    }
+
+    class SignPreset {
+        +getLineColors(): int[4]
+        +getLineHighlightColors(): int[4]
+    }
+
+    enum SignVariant {
+        BASIC
+        BLACK_BASIC
+        BLACK
+        BLUE
+        GREEN
+        PURPLE
+        RED
+        YELLOW_BASIC
+        YELLOW
+    }
+
+    enum Align {
+        LEFT
+        CENTER
+        RIGHT
+    }
+
+    ' -------------------
+    ' Client / Rendering
+    ' -------------------
+    class TileEntityCustomSignRenderer {
+        +renderTileEntityAt(te: AbstractTileEntitySign, x:double, y:double, z:double, partialTicks:float, destroyStage:int)
+    }
+
+    class SignIcons {
+        +parseLine(line: String): List<String>
+        +isIcon(token: String): boolean
+        +getIcon(token: String): ResourceLocation
+        +getIconData(token: String): IconData
+        +getAllIconTokens(): Map<String, IconData>
+    }
+
+    class SignIcons_IconData {
+        +texture: ResourceLocation
+        +ColorBend: boolean
+    }
+
+    class CustomFontRenderer {
+        +getFont(fontName:String, size:int): FontRenderer
+    }
+
+    ' -------------------
+    ' GUI
+    ' -------------------
+    class GuiCustomSign {
+        +initGui()
+        +drawScreen(mouseX:int, mouseY:int, partialTicks:float)
+        +applyChanges()
+        +updateAlignButtons()
+        +closeGui()
+    }
+
+    class GuiCustomSign_IconList {
+        +drawSlot(entryID:int, insideLeft:int, yPos:int, insideSlotHeight:int, mouseX:int, mouseY:int)
+        +elementClicked(index:int, doubleClick:boolean, mouseX:int, mouseY:int)
+        +getSize(): int
+    }
+
+    class GuiDebugStick {
+        +initGui()
+        +actionPerformed(button: GuiButton)
+        +drawScreen(mouseX:int, mouseY:int, partialTicks:float)
+        +doesGuiPauseGame(): boolean
+    }
+
+    ' ======================================
+    ' Relations / Interactions
+    ' ======================================
+    AbstractBlockSign --> AbstractTileEntitySign : contains / places
+    AbstractTileEntitySign --> SignPreset : uses
+    TileEntityCustomSignRenderer --> AbstractTileEntitySign : renders
+    TileEntityCustomSignRenderer --> SignIcons : uses
+    TileEntityCustomSignRenderer --> CustomFontRenderer : uses
+    GuiCustomSign --> AbstractTileEntitySign : edits
+    GuiCustomSign --> SignIcons_IconData : uses
+    GuiCustomSign --> CustomFontRenderer : uses
+    GuiHandler --> GuiCustomSign : opens
+    GuiHandler --> AbstractTileEntitySign : handles
+    UpdatedCreativeTabs --> AbstractBlockSign : displays
+
+}
+@enduml

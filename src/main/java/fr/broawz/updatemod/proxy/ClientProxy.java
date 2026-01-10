@@ -1,6 +1,7 @@
 // ClientProxy.java
 package fr.broawz.updatemod.proxy;
 
+import fr.broawz.updatemod.blocks.ModBlocks;
 import fr.broawz.updatemod.blocks.ModBlocksInit;
 import fr.broawz.updatemod.blocks.AbstractTileEntitySign;
 import fr.broawz.updatemod.client.render.TileEntityCustomSignRenderer;
@@ -41,6 +42,8 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void init() {
+
         System.out.println("[UpdateMod] ClientProxy init called!");
+        ModBlocks.registerRenders();
     }
 }

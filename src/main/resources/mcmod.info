@@ -3,7 +3,7 @@
     "modid": "updatemod",
     "name": "Update Mod",
     "description": "Ajoute des blocs modernes à Minecraft 1.10.2.",
-    "version": "1.0.0",
+    "version": "1.0.1.beta",
     "mcversion": "1.10.2",
     "authorList": ["Broawz"],
     "url": "",
