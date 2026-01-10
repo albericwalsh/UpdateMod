@@ -18,128 +18,125 @@ import java.util.List;
 import static net.minecraft.client.gui.Gui.drawModalRectWithCustomSizedTexture;
 
 /**
- * Renderer TESR pour les panneaux personnalisés.
- * Gère :
- *  - alignement du texte
- *  - couleurs par ligne
- *  - surlignage
- *  - icônes intégrées dans le texte
- *  - orientation du panneau (facing)
+ * TESR pour panneaux personnalisés, compatible OptiFine.
  */
 public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<AbstractTileEntitySign> {
 
     /**
-     * Méthode appelée automatiquement par Minecraft pour rendre le TileEntity
+     * Calcul largeur ligne + position curseur selon alignement
      */
+    private int[] computeLineMetrics(String line, FontRenderer fontRenderer, int iconSize, AbstractTileEntitySign.Align align) {
+        List<String> tokens = SignIcons.parseLine(line);
+
+        int lineWidth = 0;
+        for (String token : tokens) {
+            if (SignIcons.isIcon(token)) {
+                lineWidth += iconSize + 2;
+            } else {
+                for (char c : token.toCharArray()) {
+                    if (c == ' ' || c == '\u00A0' || c == '\u2007' || c == '\u2060') {
+                        lineWidth += tools.FIXED_SPACE_WIDTH;
+                    } else {
+                        lineWidth += fontRenderer.getCharWidth(c);
+                    }
+                }
+            }
+        }
+
+        int cursorX;
+        switch (align) {
+            case CENTER:
+                cursorX = -lineWidth / 2;
+                break;
+            case RIGHT:
+                cursorX = -lineWidth; // RIGHT → texte “pousse” vers la gauche
+                break;
+            default:
+                cursorX = 0; // LEFT → texte commence exactement sur le bloc
+        }
+
+        return new int[]{lineWidth, cursorX};
+    }
+
     @Override
     public void renderTileEntityAt(AbstractTileEntitySign te,
                                    double x, double y, double z,
                                    float partialTicks, int destroyStage) {
 
-        // Sauvegarde de l’état OpenGL
         GlStateManager.pushMatrix();
-
-        /* ========================================================= */
-        /* === CALCUL DE L’ALIGNEMENT HORIZONTAL DU TEXTE ========= */
-        /* ========================================================= */
-
-        float offsetX; // Décalage horizontal en unités blocs
-
-        switch (te.getAlign()) {
-            case LEFT:
-                // Texte aligné à gauche par rapport au centre du panneau
-                offsetX = -0.5F;
-                break;
-            case RIGHT:
-                // Texte aligné à droite en fonction de la largeur totale (textSpan)
-                offsetX = te.getTextSpan() - 0.5F;
-                break;
-            default:
-                // Texte centré
-                offsetX = te.getTextSpan() / 2F - 0.5F;
-                break;
-        }
-
-        /* ========================================================= */
-        /* === POSITIONNEMENT DANS LE MONDE ======================= */
-        /* ========================================================= */
 
         // Placement au centre du bloc
         GlStateManager.translate(x + 0.5F, y + 0.5F, z + 0.5F);
 
-        // Le texte regarde toujours dans le sens opposé au panneau
         EnumFacing textFacing = te.getFacing().getOpposite();
-        float offsetY = 0.497F; // Légèrement devant la face du bloc
+        float frontOffset = 0.497F; // légèrement devant la face du bloc
 
-        // Ajustement position + rotation selon la face
-        switch (textFacing) {
-            case NORTH:
-                GlStateManager.translate(offsetX, 0, -offsetY);
-                break;
-            case SOUTH:
-                GlStateManager.translate(-offsetX, 0, offsetY);
-                GlStateManager.rotate(180, 0, 1, 0);
-                break;
-            case WEST:
-                GlStateManager.translate(-offsetY, 0, offsetX);
-                GlStateManager.rotate(90, 0, 1, 0);
-                break;
-            case EAST:
-                GlStateManager.translate(offsetY, 0, -offsetX);
-                GlStateManager.rotate(-90, 0, 1, 0);
-                break;
+        // Rotation + translation selon orientation
+        if (textFacing == EnumFacing.NORTH) {
+            GlStateManager.translate(-0.5F, 0, -frontOffset);
+        } else if (textFacing == EnumFacing.SOUTH) {
+            GlStateManager.translate(-0.5F, 0, frontOffset);
+            GlStateManager.rotate(180, 0, 1, 0);
+        } else if (textFacing == EnumFacing.WEST) {
+            GlStateManager.translate(-frontOffset, 0, -0.5F);
+            GlStateManager.rotate(90, 0, 1, 0);
+        } else if (textFacing == EnumFacing.EAST) {
+            GlStateManager.translate(frontOffset, 0, -0.5F);
+            GlStateManager.rotate(-90, 0, 1, 0);
         }
 
-        // Mise à l’échelle du texte (pixels → monde)
+        /* ========================================================= */
+        /* === OFFSET LOGIQUE DE DÉPART SELON ALIGN + TEXTSPAN ==== */
+        /* ========================================================= */
+
+        float logicalOffsetX = 0F;
+
+        if (te.getAlign() == AbstractTileEntitySign.Align.RIGHT) {
+            // RIGHT commence à 1 bloc à droite
+            logicalOffsetX = 1F;
+        }
+        else if (te.getAlign() == AbstractTileEntitySign.Align.CENTER) {
+            // CENTER : span impair → décalage de 0.5
+            if ((te.getTextSpan() & 1) == 1) {
+                logicalOffsetX = 0.5F;
+            }
+        }
+
+// Application de l’offset dans le repère local
+        GlStateManager.translate(logicalOffsetX, 0, 0);
+
+
+        // Mise à l'échelle du texte
         GlStateManager.scale(te.getTextScale(), -te.getTextScale(), te.getTextScale());
 
         /* ========================================================= */
-        /* === PASSE 1 : DESSIN DES SURLIGNAGES =================== */
+        /* === PASSE 1 : SURLIGNAGE ============================== */
         /* ========================================================= */
-
-        // On dessine d’abord TOUS les fonds, avant le texte
         for (int i = 0; i < 4; i++) {
-
-            FontRenderer fontRenderer =
-                    CustomFontRenderer.getFont(te.getFontName()[i], te.getFontSize()[i]);
-
+            FontRenderer fontRenderer = CustomFontRenderer.getFont(te.getFontName()[i], te.getFontSize()[i]);
             String line = te.getLines()[i];
             int highlight = te.getLineHighlightColor()[i];
             int highlightHeight = te.getHighlightHeight()[i];
             int iconSize = fontRenderer.FONT_HEIGHT;
 
-            // Pas de surlignage → on ignore la ligne
             if (highlight == 0) continue;
 
-            // Découpage texte + icônes
-            List<String> tokens = SignIcons.parseLine(line);
+            int[] metrics = computeLineMetrics(line, fontRenderer, iconSize, te.getAlign());
+            int lineWidth = metrics[0];
+            int cursorX = metrics[1];
 
-            /* --- Calcul de la largeur totale de la ligne --- */
-            int lineWidth = 0;
-            for (String token : tokens) {
-                if (SignIcons.isIcon(token)) {
-                    lineWidth += iconSize + 2;
-                } else {
-                    for (char c : token.toCharArray()) {
-                        lineWidth += fontRenderer.getCharWidth(c == '\u00A0' ? ' ' : c);
-                    }
-                }
-            }
-
-            /* --- Position de départ selon l’alignement --- */
-            int cursorXStart;
-            switch (te.getAlign()) {
-                case CENTER: cursorXStart = -lineWidth / 2; break;
-                case RIGHT:  cursorXStart = -lineWidth;     break;
-                default:     cursorXStart = 0;              break;
-            }
-
-            // Désactivation des textures pour dessiner un quad couleur
+            GlStateManager.pushMatrix();
             GlStateManager.disableTexture2D();
             GlStateManager.disableLighting();
+            GlStateManager.depthMask(false);
+            GlStateManager.enableDepth();
             GlStateManager.disableBlend();
+            GlStateManager.disableAlpha();
+            GlStateManager.disableCull();
 
-            // Conversion couleur int → float
+            // Mettre le highlight légèrement “derrière” le texte
+            GlStateManager.translate(0, 0, -0.001F);
+
             float r = ((highlight >> 16) & 0xFF) / 255F;
             float g = ((highlight >> 8) & 0xFF) / 255F;
             float b = (highlight & 0xFF) / 255F;
@@ -147,77 +144,88 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             int top = i * 10 - 20 - highlightHeight / 2 + iconSize / 2;
             int bottom = top + highlightHeight;
 
-            // Dessin du rectangle de surlignage
             Tessellator tess = Tessellator.getInstance();
             VertexBuffer buffer = tess.getBuffer();
             buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
-            buffer.pos(cursorXStart, bottom, 0).color(r, g, b, 1).endVertex();
-            buffer.pos(cursorXStart + lineWidth, bottom, 0).color(r, g, b, 1).endVertex();
-            buffer.pos(cursorXStart + lineWidth, top, 0).color(r, g, b, 1).endVertex();
-            buffer.pos(cursorXStart, top, 0).color(r, g, b, 1).endVertex();
+            buffer.pos(cursorX, bottom, 0).color(r, g, b, 1).endVertex();
+            buffer.pos(cursorX + lineWidth, bottom, 0).color(r, g, b, 1).endVertex();
+            buffer.pos(cursorX + lineWidth, top, 0).color(r, g, b, 1).endVertex();
+            buffer.pos(cursorX, top, 0).color(r, g, b, 1).endVertex();
             tess.draw();
+
+            GlStateManager.enableCull();
+            GlStateManager.depthMask(true);
+            GlStateManager.enableTexture2D();
+            GlStateManager.enableLighting();
+            GlStateManager.popMatrix();
         }
 
         /* ========================================================= */
-        /* === PASSE 2 : DESSIN DU TEXTE ET DES ICÔNES ============ */
+        /* === PASSE 2 : TEXTE & ICÔNES ========================== */
         /* ========================================================= */
-
         GlStateManager.enableTexture2D();
-        GlStateManager.enableBlend();
+        GlStateManager.enableLighting();
+        GlStateManager.depthMask(true);
+        GlStateManager.enableDepth();
+        GlStateManager.color(1f, 1f, 1f, 1f);
 
         for (int i = 0; i < 4; i++) {
-
-            FontRenderer fontRenderer =
-                    CustomFontRenderer.getFont(te.getFontName()[i], te.getFontSize()[i]);
-
+            FontRenderer fontRenderer = CustomFontRenderer.getFont(te.getFontName()[i], te.getFontSize()[i]);
             String line = te.getLines()[i];
             int color = te.getTextColor()[i];
             int iconSize = fontRenderer.FONT_HEIGHT;
 
+            int[] metrics = computeLineMetrics(line, fontRenderer, iconSize, te.getAlign());
+            int cursorX = metrics[1];
+
             List<String> tokens = SignIcons.parseLine(line);
+            int textOffsetY = i * 10 - 20; // texte au-dessus du highlight
 
-            int cursorX = 0;
+            GlStateManager.enableAlpha();
+            GlStateManager.enableBlend();
+            GlStateManager.tryBlendFuncSeparate(
+                    GlStateManager.SourceFactor.SRC_ALPHA,
+                    GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+                    GlStateManager.SourceFactor.ONE,
+                    GlStateManager.DestFactor.ZERO
+            );
 
-            // Dessin caractère par caractère / icône par icône
             for (String token : tokens) {
-
                 if (SignIcons.isIcon(token)) {
                     SignIcons.IconData data = SignIcons.getIconData(token);
-                    Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
+                    if (data != null) {
+                        Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
+                        if (data.ColorBend) {
+                            float r = ((color >> 16) & 0xFF) / 255F;
+                            float g = ((color >> 8) & 0xFF) / 255F;
+                            float b = (color & 0xFF) / 255F;
+                            GlStateManager.color(r, g, b, 1);
+                        } else {
+                            GlStateManager.color(1, 1, 1, 1);
+                        }
 
-                    // Icône colorée ou non
-                    if (data.ColorBend) {
-                        float r = ((color >> 16) & 0xFF) / 255F;
-                        float g = ((color >> 8) & 0xFF) / 255F;
-                        float b = (color & 0xFF) / 255F;
-                        GlStateManager.color(r, g, b, 1);
-                    } else {
-                        GlStateManager.color(1, 1, 1, 1);
+                        drawModalRectWithCustomSizedTexture(cursorX, textOffsetY, 0, 0, iconSize, iconSize, iconSize, iconSize);
+                        cursorX += iconSize + 2;
                     }
-
-                    drawModalRectWithCustomSizedTexture(
-                            cursorX, i * 10 - 20,
-                            0, 0,
-                            iconSize, iconSize,
-                            iconSize, iconSize
-                    );
-
-                    cursorX += iconSize + 2;
                 } else {
                     for (char c : token.toCharArray()) {
-                        fontRenderer.drawString(
-                                String.valueOf(c),
-                                cursorX,
-                                i * 10 - 20,
-                                color
-                        );
-                        cursorX += tools.FIXED_SPACE_WIDTH;
+                        int charWidth;
+                        if (c == ' ' || c == '\u00A0' || c == '\u2007' || c == '\u2060') {
+                            charWidth = tools.FIXED_SPACE_WIDTH;
+                        } else {
+                            charWidth = fontRenderer.getCharWidth(c);
+                            fontRenderer.drawString(String.valueOf(c), cursorX, textOffsetY, color);
+                        }
+                        cursorX += charWidth;
                     }
                 }
             }
+
+            GlStateManager.disableBlend();
+            GlStateManager.disableAlpha();
         }
 
-        // Restauration de l’état OpenGL
+        GlStateManager.color(1f, 1f, 1f, 1f);
         GlStateManager.popMatrix();
     }
 }
