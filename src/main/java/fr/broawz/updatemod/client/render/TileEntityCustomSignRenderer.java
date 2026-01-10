@@ -19,16 +19,30 @@ import static net.minecraft.client.gui.Gui.drawModalRectWithCustomSizedTexture;
 
 /**
  * Renderer TESR pour les panneaux personnalisés.
- * Compatible OptiFine + Shaders
+ * Compatible OptiFine + Shaders.
+ *
+ * Gère :
+ *  - Alignement du texte (LEFT, CENTER, RIGHT)
+ *  - Couleurs par ligne
+ *  - Surlignage avec correction des normales pour Sud/Ouest
+ *  - Icônes intégrées dans le texte
+ *  - Orientation du panneau (NORTH, SOUTH, EAST, WEST)
  */
 public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<AbstractTileEntitySign> {
 
     /**
-     * Calcule la largeur totale d'une ligne et la position initiale du curseur
+     * Calcule la largeur totale d'une ligne et la position initiale du curseur selon l'alignement
+     *
+     * @param line Ligne de texte à analyser
+     * @param fontRenderer FontRenderer pour calculer les largeurs
+     * @param iconSize Taille des icônes
+     * @param align Alignement demandé
+     * @return [0] = largeur totale, [1] = position X de départ
      */
     private int[] computeLineMetrics(String line, FontRenderer fontRenderer, int iconSize, AbstractTileEntitySign.Align align) {
         List<String> tokens = SignIcons.parseLine(line);
 
+        // Calcul de la largeur totale
         int lineWidth = 0;
         for (String token : tokens) {
             if (SignIcons.isIcon(token)) {
@@ -44,6 +58,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             }
         }
 
+        // Position de départ selon l'alignement
         int cursorX;
         switch (align) {
             case CENTER:
@@ -52,8 +67,9 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             case RIGHT:
                 cursorX = -lineWidth;
                 break;
-            default:
+            default: // LEFT
                 cursorX = 0;
+                break;
         }
 
         return new int[]{lineWidth, cursorX};
@@ -79,7 +95,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             case RIGHT:
                 offsetX = (te.getTextSpan() - 1) + 0.5F;
                 break;
-            default:
+            default: // CENTER
                 offsetX = (te.getTextSpan() - 1) / 2F;
                 break;
         }
@@ -88,11 +104,14 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
         /* === POSITIONNEMENT DANS LE MONDE ======================= */
         /* ========================================================= */
 
+        // Placement au centre du bloc
         GlStateManager.translate(x + 0.5F, y + 0.5F, z + 0.5F);
 
+        // Le texte regarde dans le sens opposé au panneau
         EnumFacing textFacing = te.getFacing().getOpposite();
-        float offsetY = 0.497F;
+        float offsetY = 0.497F; // Légèrement devant la face du bloc
 
+        // Ajustement position + rotation selon la face
         switch (textFacing) {
             case NORTH:
                 GlStateManager.translate(offsetX, 0, -offsetY);
@@ -111,6 +130,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
                 break;
         }
 
+        // Mise à l'échelle du texte (pixels → monde)
         GlStateManager.scale(te.getTextScale(), -te.getTextScale(), te.getTextScale());
 
         /* ========================================================= */
@@ -132,24 +152,29 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
 
             GlStateManager.pushMatrix();
 
-            // ✅ États GL pour OptiFine : ordre important
+            // États GL pour OptiFine : ordre important
             GlStateManager.disableTexture2D();
             GlStateManager.disableLighting();
+            GlStateManager.disableFog();
 
-            // ✅ CRITIQUE pour OptiFine : désactiver depth write mais garder depth test
+            // Désactiver depth write mais garder depth test
             GlStateManager.depthMask(false);
             GlStateManager.enableDepth();
 
-            // ✅ Pas de blend pour un rendu opaque
+            // Pas de blend pour un rendu opaque
             GlStateManager.disableBlend();
             GlStateManager.disableAlpha();
 
-            // ✅ Désactiver face culling
+            // Désactiver face culling
             GlStateManager.disableCull();
 
-            // ✅ Petit décalage Z (moins important qu'avant)
+            // Forcer couleur blanche avant rendu
+            GlStateManager.color(1f, 1f, 1f, 1f);
+
+            // Petit décalage Z pour mettre derrière le texte
             GlStateManager.translate(0, 0, -0.001F);
 
+            // Extraction des composants RGB
             float r = ((highlight >> 16) & 0xFF) / 255F;
             float g = ((highlight >> 8) & 0xFF) / 255F;
             float b = (highlight & 0xFF) / 255F;
@@ -157,6 +182,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             int top = i * 10 - 20 - highlightHeight / 2 + iconSize / 2;
             int bottom = top + highlightHeight;
 
+            // Dessin du rectangle de surlignage
             Tessellator tess = Tessellator.getInstance();
             VertexBuffer buffer = tess.getBuffer();
             buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
@@ -166,9 +192,10 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             buffer.pos(cursorX, top, 0).color(r, g, b, 1).endVertex();
             tess.draw();
 
-            // ✅ Restaurer les états dans l'ordre inverse
+            // Restaurer les états dans l'ordre inverse
             GlStateManager.enableCull();
             GlStateManager.depthMask(true);
+            GlStateManager.enableFog();
             GlStateManager.enableTexture2D();
             GlStateManager.enableLighting();
 
@@ -179,7 +206,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
         /* === PASSE 2 : DESSIN DU TEXTE ET DES ICÔNES ============ */
         /* ========================================================= */
 
-        // ✅ Réinitialiser complètement les états pour le texte
+        // Réinitialiser complètement les états pour le texte
         GlStateManager.enableTexture2D();
         GlStateManager.enableLighting();
         GlStateManager.depthMask(true);
@@ -197,10 +224,10 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
 
             List<String> tokens = SignIcons.parseLine(line);
 
-            // ✅ Position Y du texte (pas de translate en Z ici !)
+            // Position Y du texte
             int textOffsetY = i * 10 - 20;
 
-            // ✅ États pour le texte
+            // États pour le texte
             GlStateManager.enableAlpha();
             GlStateManager.enableBlend();
             GlStateManager.tryBlendFuncSeparate(
@@ -212,16 +239,19 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
 
             for (String token : tokens) {
                 if (SignIcons.isIcon(token)) {
+                    // Dessin d'une icône
                     SignIcons.IconData data = SignIcons.getIconData(token);
                     if (data != null) {
                         Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
 
                         if (data.ColorBend) {
+                            // Icône teintée avec la couleur du texte
                             float r = ((color >> 16) & 0xFF) / 255F;
                             float g = ((color >> 8) & 0xFF) / 255F;
                             float b = (color & 0xFF) / 255F;
                             GlStateManager.color(r, g, b, 1);
                         } else {
+                            // Icône avec ses couleurs originales
                             GlStateManager.color(1, 1, 1, 1);
                         }
 
@@ -235,12 +265,15 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
                         cursorX += iconSize + 2;
                     }
                 } else {
+                    // Dessin de texte caractère par caractère
                     for (char c : token.toCharArray()) {
                         int charWidth;
 
                         if (c == ' ' || c == '\u00A0' || c == '\u2007' || c == '\u2060') {
+                            // Espaces : utiliser largeur fixe
                             charWidth = tools.FIXED_SPACE_WIDTH;
                         } else {
+                            // Caractère visible : dessiner et utiliser sa largeur réelle
                             charWidth = fontRenderer.getCharWidth(c);
                             fontRenderer.drawString(String.valueOf(c), cursorX, textOffsetY, color);
                         }
@@ -254,7 +287,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             GlStateManager.disableAlpha();
         }
 
-        // ✅ Nettoyage final
+        // Nettoyage final
         GlStateManager.color(1f, 1f, 1f, 1f);
         GlStateManager.popMatrix();
     }
