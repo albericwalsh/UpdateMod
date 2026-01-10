@@ -18,12 +18,13 @@ import java.util.List;
 import static net.minecraft.client.gui.Gui.drawModalRectWithCustomSizedTexture;
 
 /**
- * TESR pour panneaux personnalisés, compatible OptiFine.
+ * Renderer TESR pour les panneaux personnalisés.
+ * Compatible OptiFine + Shaders
  */
 public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<AbstractTileEntitySign> {
 
     /**
-     * Calcul largeur ligne + position curseur selon alignement
+     * Calcule la largeur totale d'une ligne et la position initiale du curseur
      */
     private int[] computeLineMetrics(String line, FontRenderer fontRenderer, int iconSize, AbstractTileEntitySign.Align align) {
         List<String> tokens = SignIcons.parseLine(line);
@@ -49,10 +50,10 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
                 cursorX = -lineWidth / 2;
                 break;
             case RIGHT:
-                cursorX = -lineWidth; // RIGHT → texte “pousse” vers la gauche
+                cursorX = -lineWidth;
                 break;
             default:
-                cursorX = 0; // LEFT → texte commence exactement sur le bloc
+                cursorX = 0;
         }
 
         return new int[]{lineWidth, cursorX};
@@ -65,53 +66,57 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
 
         GlStateManager.pushMatrix();
 
-        // Placement au centre du bloc
+        /* ========================================================= */
+        /* === CALCUL DE L'ALIGNEMENT HORIZONTAL DU TEXTE ========= */
+        /* ========================================================= */
+
+        float offsetX;
+
+        switch (te.getAlign()) {
+            case LEFT:
+                offsetX = -0.5F;
+                break;
+            case RIGHT:
+                offsetX = (te.getTextSpan() - 1) + 0.5F;
+                break;
+            default:
+                offsetX = (te.getTextSpan() - 1) / 2F;
+                break;
+        }
+
+        /* ========================================================= */
+        /* === POSITIONNEMENT DANS LE MONDE ======================= */
+        /* ========================================================= */
+
         GlStateManager.translate(x + 0.5F, y + 0.5F, z + 0.5F);
 
         EnumFacing textFacing = te.getFacing().getOpposite();
-        float frontOffset = 0.497F; // légèrement devant la face du bloc
+        float offsetY = 0.497F;
 
-        // Rotation + translation selon orientation
-        if (textFacing == EnumFacing.NORTH) {
-            GlStateManager.translate(-0.5F, 0, -frontOffset);
-        } else if (textFacing == EnumFacing.SOUTH) {
-            GlStateManager.translate(-0.5F, 0, frontOffset);
-            GlStateManager.rotate(180, 0, 1, 0);
-        } else if (textFacing == EnumFacing.WEST) {
-            GlStateManager.translate(-frontOffset, 0, -0.5F);
-            GlStateManager.rotate(90, 0, 1, 0);
-        } else if (textFacing == EnumFacing.EAST) {
-            GlStateManager.translate(frontOffset, 0, -0.5F);
-            GlStateManager.rotate(-90, 0, 1, 0);
+        switch (textFacing) {
+            case NORTH:
+                GlStateManager.translate(offsetX, 0, -offsetY);
+                break;
+            case SOUTH:
+                GlStateManager.translate(-offsetX, 0, offsetY);
+                GlStateManager.rotate(180, 0, 1, 0);
+                break;
+            case WEST:
+                GlStateManager.translate(-offsetY, 0, offsetX);
+                GlStateManager.rotate(90, 0, 1, 0);
+                break;
+            case EAST:
+                GlStateManager.translate(offsetY, 0, -offsetX);
+                GlStateManager.rotate(-90, 0, 1, 0);
+                break;
         }
 
-        /* ========================================================= */
-        /* === OFFSET LOGIQUE DE DÉPART SELON ALIGN + TEXTSPAN ==== */
-        /* ========================================================= */
-
-        float logicalOffsetX = 0F;
-
-        if (te.getAlign() == AbstractTileEntitySign.Align.RIGHT) {
-            // RIGHT commence à 1 bloc à droite
-            logicalOffsetX = 1F;
-        }
-        else if (te.getAlign() == AbstractTileEntitySign.Align.CENTER) {
-            // CENTER : span impair → décalage de 0.5
-            if ((te.getTextSpan() & 1) == 1) {
-                logicalOffsetX = 0.5F;
-            }
-        }
-
-// Application de l’offset dans le repère local
-        GlStateManager.translate(logicalOffsetX, 0, 0);
-
-
-        // Mise à l'échelle du texte
         GlStateManager.scale(te.getTextScale(), -te.getTextScale(), te.getTextScale());
 
         /* ========================================================= */
-        /* === PASSE 1 : SURLIGNAGE ============================== */
+        /* === PASSE 1 : DESSIN DES SURLIGNAGES =================== */
         /* ========================================================= */
+
         for (int i = 0; i < 4; i++) {
             FontRenderer fontRenderer = CustomFontRenderer.getFont(te.getFontName()[i], te.getFontSize()[i]);
             String line = te.getLines()[i];
@@ -126,15 +131,23 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             int cursorX = metrics[1];
 
             GlStateManager.pushMatrix();
+
+            // ✅ États GL pour OptiFine : ordre important
             GlStateManager.disableTexture2D();
             GlStateManager.disableLighting();
+
+            // ✅ CRITIQUE pour OptiFine : désactiver depth write mais garder depth test
             GlStateManager.depthMask(false);
             GlStateManager.enableDepth();
+
+            // ✅ Pas de blend pour un rendu opaque
             GlStateManager.disableBlend();
             GlStateManager.disableAlpha();
+
+            // ✅ Désactiver face culling
             GlStateManager.disableCull();
 
-            // Mettre le highlight légèrement “derrière” le texte
+            // ✅ Petit décalage Z (moins important qu'avant)
             GlStateManager.translate(0, 0, -0.001F);
 
             float r = ((highlight >> 16) & 0xFF) / 255F;
@@ -153,16 +166,20 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             buffer.pos(cursorX, top, 0).color(r, g, b, 1).endVertex();
             tess.draw();
 
+            // ✅ Restaurer les états dans l'ordre inverse
             GlStateManager.enableCull();
             GlStateManager.depthMask(true);
             GlStateManager.enableTexture2D();
             GlStateManager.enableLighting();
+
             GlStateManager.popMatrix();
         }
 
         /* ========================================================= */
-        /* === PASSE 2 : TEXTE & ICÔNES ========================== */
+        /* === PASSE 2 : DESSIN DU TEXTE ET DES ICÔNES ============ */
         /* ========================================================= */
+
+        // ✅ Réinitialiser complètement les états pour le texte
         GlStateManager.enableTexture2D();
         GlStateManager.enableLighting();
         GlStateManager.depthMask(true);
@@ -179,8 +196,11 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             int cursorX = metrics[1];
 
             List<String> tokens = SignIcons.parseLine(line);
-            int textOffsetY = i * 10 - 20; // texte au-dessus du highlight
 
+            // ✅ Position Y du texte (pas de translate en Z ici !)
+            int textOffsetY = i * 10 - 20;
+
+            // ✅ États pour le texte
             GlStateManager.enableAlpha();
             GlStateManager.enableBlend();
             GlStateManager.tryBlendFuncSeparate(
@@ -195,6 +215,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
                     SignIcons.IconData data = SignIcons.getIconData(token);
                     if (data != null) {
                         Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
+
                         if (data.ColorBend) {
                             float r = ((color >> 16) & 0xFF) / 255F;
                             float g = ((color >> 8) & 0xFF) / 255F;
@@ -204,18 +225,26 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
                             GlStateManager.color(1, 1, 1, 1);
                         }
 
-                        drawModalRectWithCustomSizedTexture(cursorX, textOffsetY, 0, 0, iconSize, iconSize, iconSize, iconSize);
+                        drawModalRectWithCustomSizedTexture(
+                                cursorX, textOffsetY,
+                                0, 0,
+                                iconSize, iconSize,
+                                iconSize, iconSize
+                        );
+
                         cursorX += iconSize + 2;
                     }
                 } else {
                     for (char c : token.toCharArray()) {
                         int charWidth;
+
                         if (c == ' ' || c == '\u00A0' || c == '\u2007' || c == '\u2060') {
                             charWidth = tools.FIXED_SPACE_WIDTH;
                         } else {
                             charWidth = fontRenderer.getCharWidth(c);
                             fontRenderer.drawString(String.valueOf(c), cursorX, textOffsetY, color);
                         }
+
                         cursorX += charWidth;
                     }
                 }
@@ -225,6 +254,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
             GlStateManager.disableAlpha();
         }
 
+        // ✅ Nettoyage final
         GlStateManager.color(1f, 1f, 1f, 1f);
         GlStateManager.popMatrix();
     }
