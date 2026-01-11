@@ -2,7 +2,7 @@
   {
     "modid": "updatemod",
     "name": "Update Mod",
-    "description": "Ajoute des blocs modernes à Minecraft 1.10.2.",
+    "description": "Ajoute des blocs modernes à Minecraft 1.10.2. \nAjout de Panneaux de signalisation custom.\n\n Attention: Mod en version BETA, des bugs peuvent survenir.",
     "version": "1.0.1.beta",
     "mcversion": "1.10.2",
     "authorList": ["Broawz"],
