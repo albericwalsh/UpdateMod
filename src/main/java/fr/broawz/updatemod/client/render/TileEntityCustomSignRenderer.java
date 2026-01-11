@@ -6,12 +6,8 @@ import fr.broawz.updatemod.utils.tools;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.EnumFacing;
-import org.lwjgl.opengl.GL11;
 
 import java.util.List;
 
@@ -20,7 +16,7 @@ import static net.minecraft.client.gui.Gui.drawModalRectWithCustomSizedTexture;
 /**
  * Renderer TESR pour les panneaux personnalisés.
  * Compatible OptiFine + Shaders.
- *
+ * <p>
  * Gère :
  *  - Alignement du texte (LEFT, CENTER, RIGHT)
  *  - Couleurs par ligne
@@ -134,70 +130,79 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
         GlStateManager.scale(te.getTextScale(), -te.getTextScale(), te.getTextScale());
 
         /* ========================================================= */
-        /* === PASSE 1 : DESSIN DES SURLIGNAGES =================== */
+        /* === PASSE 1 : DESSIN DES SURLIGNAGES (TEXTURE) ========== */
         /* ========================================================= */
 
         for (int i = 0; i < 4; i++) {
-            FontRenderer fontRenderer = CustomFontRenderer.getFont(te.getFontName()[i], te.getFontSize()[i]);
+            FontRenderer fontRenderer = CustomFontRenderer.getFont(
+                    te.getFontName()[i],
+                    te.getFontSize()[i]
+            );
+
             String line = te.getLines()[i];
-            int highlight = te.getLineHighlightColor()[i];
+            int highlightColor = te.getLineHighlightColor()[i];
             int highlightHeight = te.getHighlightHeight()[i];
             int iconSize = fontRenderer.FONT_HEIGHT;
 
-            if (highlight == 0) continue;
+            if (highlightColor == 0) continue;
 
             int[] metrics = computeLineMetrics(line, fontRenderer, iconSize, te.getAlign());
             int lineWidth = metrics[0];
             int cursorX = metrics[1];
 
+            // Récupération de la texture de highlight selon la variant
+            Highlight.HighlightData data =
+                    Highlight.HighlightData.getHighlightData(te.getSignVariant());
+
+            if (data == null) continue;
+
+            Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
+
+
             GlStateManager.pushMatrix();
 
-            // États GL pour OptiFine : ordre important
-            GlStateManager.disableTexture2D();
+            // Placement derrière le texte
+            GlStateManager.translate(0, 0, -0.001F);
+
+            // États GL stables OptiFine
+            GlStateManager.enableTexture2D();
             GlStateManager.disableLighting();
             GlStateManager.disableFog();
 
-            // Désactiver depth write mais garder depth test
+            GlStateManager.enableBlend();
+            GlStateManager.tryBlendFuncSeparate(
+                    GlStateManager.SourceFactor.SRC_ALPHA,
+                    GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+                    GlStateManager.SourceFactor.ONE,
+                    GlStateManager.DestFactor.ZERO
+            );
+
             GlStateManager.depthMask(false);
             GlStateManager.enableDepth();
-
-            // Pas de blend pour un rendu opaque
-            GlStateManager.disableBlend();
-            GlStateManager.disableAlpha();
-
-            // Désactiver face culling
             GlStateManager.disableCull();
 
-            // Forcer couleur blanche avant rendu
-            GlStateManager.color(1f, 1f, 1f, 1f);
+            // Bind texture du highlight
+            Minecraft.getMinecraft().getTextureManager().bindTexture(data.texture);
 
-            // Petit décalage Z pour mettre derrière le texte
-            GlStateManager.translate(0, 0, -0.001F);
+            // Position Y identique à ton ancien calcul
+            int highlightY = i * 10 - 20 - highlightHeight / 2 + iconSize / 2;
 
-            // Extraction des composants RGB
-            float r = ((highlight >> 16) & 0xFF) / 255F;
-            float g = ((highlight >> 8) & 0xFF) / 255F;
-            float b = (highlight & 0xFF) / 255F;
+            // Dessin stretché de la texture
+            drawModalRectWithCustomSizedTexture(
+                    cursorX,
+                    highlightY,
+                    0, 0,
+                    lineWidth,
+                    highlightHeight,
+                    1, 1   // texture stretchée (1x1 ou 8x8)
+            );
 
-            int top = i * 10 - 20 - highlightHeight / 2 + iconSize / 2;
-            int bottom = top + highlightHeight;
-
-            // Dessin du rectangle de surlignage
-            Tessellator tess = Tessellator.getInstance();
-            VertexBuffer buffer = tess.getBuffer();
-            buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
-            buffer.pos(cursorX, bottom, 0).color(r, g, b, 1).endVertex();
-            buffer.pos(cursorX + lineWidth, bottom, 0).color(r, g, b, 1).endVertex();
-            buffer.pos(cursorX + lineWidth, top, 0).color(r, g, b, 1).endVertex();
-            buffer.pos(cursorX, top, 0).color(r, g, b, 1).endVertex();
-            tess.draw();
-
-            // Restaurer les états dans l'ordre inverse
+            // Restore états
             GlStateManager.enableCull();
             GlStateManager.depthMask(true);
-            GlStateManager.enableFog();
-            GlStateManager.enableTexture2D();
+            GlStateManager.disableBlend();
             GlStateManager.enableLighting();
+            GlStateManager.enableFog();
 
             GlStateManager.popMatrix();
         }

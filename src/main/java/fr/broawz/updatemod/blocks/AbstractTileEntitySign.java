@@ -47,6 +47,15 @@ public abstract class AbstractTileEntitySign extends TileEntity {
     public EnumFacing getFacing() { return facing; }
     public int getVariant() { return variant; }
 
+    public AbstractBlockSign.SignVariant getSignVariant() {
+        AbstractBlockSign.SignVariant[] values = AbstractBlockSign.SignVariant.values();
+        if (variant < 0 || variant >= values.length) {
+            return AbstractBlockSign.SignVariant.BASIC;
+        }
+        return values[variant];
+    }
+
+
     // --- Setters publics ---
     // Ces setters sont destinés à être appelés par d’autres classes
     // et peuvent déclencher la synchronisation ou le markDirty si nécessaire.
