@@ -3,6 +3,7 @@ package fr.broawz.updatemod.proxy;
 import fr.broawz.updatemod.blocks.AbstractTileEntitySign;
 import fr.broawz.updatemod.blocks.ModBlocks;
 import fr.broawz.updatemod.blocks.ModBlocksInit;
+import fr.broawz.updatemod.client.render.SignIcons;
 import fr.broawz.updatemod.client.render.TileEntityCustomSignRenderer;
 import fr.broawz.updatemod.items.ItemDebugStick;
 import fr.broawz.updatemod.items.ModItemsInit;
@@ -53,6 +54,7 @@ public class ClientProxy extends CommonProxy {
             );
         }
         ModItemsInit.registerModels();
+        SignIcons.loadFromJSON();
     }
 
     @Override

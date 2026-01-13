@@ -1,0 +1,58 @@
+{
+  "icons": [
+    {
+      "token": "[v]",
+      "path": "textures/icons/arrow_down.png",
+      "tintable": true,
+      "category": "arrow"
+    },
+    {
+      "token": "[>]",
+      "path": "textures/icons/arrow_right.png",
+      "tintable": true,
+      "category": "arrow"
+    },
+    {
+      "token": "[<]",
+      "path": "textures/icons/arrow_left.png",
+      "tintable": true,
+      "category": "arrow"
+    },
+    {
+      "token": "[^]",
+      "path": "textures/icons/arrow_up.png",
+      "tintable": true,
+      "category": "arrow"
+    },
+    {
+      "token": "[HW]",
+      "path": "textures/icons/hightway.png",
+      "tintable": false,
+      "category": "road"
+    },
+    {
+      "token": "[!PL]",
+      "path": "textures/icons/no_truck.png",
+      "tintable": false,
+      "category": "road"
+    },
+    {
+      "token": "[PL]",
+      "path": "textures/icons/truck.png",
+      "tintable": false,
+      "category": "road"
+    },
+    {
+      "token": "[AP]",
+      "path": "textures/icons/airport.png",
+      "tintable": false,
+      "category": "services"
+    },
+    {
+      "token": "[EX]",
+      "path": "textures/icons/exit.png",
+      "tintable": true,
+      "category": "road"
+    }
+  ]
+}
