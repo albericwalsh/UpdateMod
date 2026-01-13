@@ -89,7 +89,7 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
                 offsetX = -0.5F;
                 break;
             case RIGHT:
-                offsetX = (te.getTextSpan() - 1) + 0.5F;
+                offsetX = 0.5F;
                 break;
             default: // CENTER
                 offsetX = (te.getTextSpan() - 1) / 2F;
@@ -110,18 +110,18 @@ public class TileEntityCustomSignRenderer extends TileEntitySpecialRenderer<Abst
         // Ajustement position + rotation selon la face
         switch (textFacing) {
             case NORTH:
-                GlStateManager.translate(offsetX, 0, -offsetY);
+                GlStateManager.translate(-offsetX, 0, -offsetY);
                 break;
             case SOUTH:
-                GlStateManager.translate(-offsetX, 0, offsetY);
+                GlStateManager.translate(offsetX, 0, offsetY);
                 GlStateManager.rotate(180, 0, 1, 0);
                 break;
             case WEST:
-                GlStateManager.translate(-offsetY, 0, offsetX);
+                GlStateManager.translate(-offsetY, 0, -offsetX);
                 GlStateManager.rotate(90, 0, 1, 0);
                 break;
             case EAST:
-                GlStateManager.translate(offsetY, 0, -offsetX);
+                GlStateManager.translate(offsetY, 0, offsetX);
                 GlStateManager.rotate(-90, 0, 1, 0);
                 break;
         }
