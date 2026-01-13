@@ -27,5 +27,5 @@ public class References {
 
     // --- Onglet créatif personnalisé ---
     // Utilisé pour regrouper tous les items et blocs du mod dans l’interface créative
-    public static final CreativeTabs UPDATED_MOD = new UpdatedCreativeTabs("UpdateMod");
+    public static final CreativeTabs UPDATED_MOD = new UpdatedCreativeTabs("updatemod");
 }

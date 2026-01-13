@@ -1,6 +1,10 @@
 package fr.broawz.updatemod.creativetabs;
 
 import fr.broawz.updatemod.blocks.ModBlocksInit;
+import fr.broawz.updatemod.items.ItemTabIcon;
+import fr.broawz.updatemod.items.ModItems;
+import fr.broawz.updatemod.items.ModItemsInit;
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -44,21 +48,9 @@ public class UpdatedCreativeTabs extends CreativeTabs {
      *  - ex : ModItems.DEBUG_STICK
      */
     @Override
+    @MethodsReturnNonnullByDefault
     @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
-        return Items.DIAMOND; // Icône temporaire (facile à repérer)
-    }
-
-    /**
-     * Nom affiché de l’onglet dans l’interface créative
-     *
-     * ⚠️ Ce texte n’est PAS localisé (pas de .lang)
-     * Si tu veux une traduction :
-     *  - override getTranslatedTabLabel()
-     *  - ou utiliser un fichier lang
-     */
-    @Override
-    public String getTabLabel() {
-        return "Update Mod";
+        return ModItemsInit.TAB_ICON;
     }
 }

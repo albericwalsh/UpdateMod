@@ -5,6 +5,7 @@ import fr.broawz.updatemod.blocks.ModBlocks;
 import fr.broawz.updatemod.blocks.ModBlocksInit;
 import fr.broawz.updatemod.client.render.TileEntityCustomSignRenderer;
 import fr.broawz.updatemod.items.ItemDebugStick;
+import fr.broawz.updatemod.items.ModItemsInit;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -51,6 +52,7 @@ public class ClientProxy extends CommonProxy {
                     new ModelResourceLocation("updatemod:" + BASIC_SIGN_VARIANTS[i], "inventory")
             );
         }
+        ModItemsInit.registerModels();
     }
 
     @Override

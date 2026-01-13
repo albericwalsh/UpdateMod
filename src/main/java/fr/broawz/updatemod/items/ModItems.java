@@ -1,6 +1,7 @@
 package fr.broawz.updatemod.items;
 
 import fr.broawz.updatemod.utils.References;
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public abstract class ModItems extends Item {
@@ -40,11 +42,14 @@ public abstract class ModItems extends Item {
     }
 
     @Override
+    @ParametersAreNonnullByDefault
     public boolean hasEffect(ItemStack stack) {
         return glowing;
     }
 
     @Override
+    @MethodsReturnNonnullByDefault
+    @ParametersAreNonnullByDefault
     public String getUnlocalizedName(ItemStack stack) {
         if (this.subTypes != null && this.subTypes.length > 0) {
             int metadata = stack.getItemDamage();
@@ -59,6 +64,7 @@ public abstract class ModItems extends Item {
 
 
     @Override
+    @ParametersAreNonnullByDefault
     public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
         if (this.getCreativeTab() == tab) {
             if (this.subTypes != null && this.subTypes.length > 0) {
@@ -88,6 +94,7 @@ public abstract class ModItems extends Item {
             }
         }
     }
+
 
     private void registerItem(Item item) {
         GameRegistry.register(item);

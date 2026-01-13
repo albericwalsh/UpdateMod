@@ -55,25 +55,22 @@ public class ItemDebugStick extends ModItems {
         ItemStack stack = playerIn.getHeldItem(handIn);
 
         // ✅ Plus besoin de vérifier isRemote, on est forcément côté client
-        if (playerIn != null) {
+        // RayTrace : récupère le bloc regardé (5 blocs max)
+        RayTraceResult rayTrace = playerIn.rayTrace(5.0D, 1.0F);
 
-            // RayTrace : récupère le bloc regardé (5 blocs max)
-            RayTraceResult rayTrace = playerIn.rayTrace(5.0D, 1.0F);
+        if (rayTrace != null && rayTrace.typeOfHit == RayTraceResult.Type.BLOCK) {
+            BlockPos pos = rayTrace.getBlockPos();
+            IBlockState state = worldIn.getBlockState(pos);
 
-            if (rayTrace != null && rayTrace.typeOfHit == RayTraceResult.Type.BLOCK) {
-                BlockPos pos = rayTrace.getBlockPos();
-                IBlockState state = worldIn.getBlockState(pos);
+            // ✅ Import dynamique pour éviter le chargement côté serveur
+            openDebugGui(pos, state);
 
-                // ✅ Import dynamique pour éviter le chargement côté serveur
-                openDebugGui(pos, state);
+            // Message de confirmation dans le chat
+            playerIn.addChatMessage(
+                    new TextComponentString("DebugStick activated")
+            );
 
-                // Message de confirmation dans le chat
-                playerIn.addChatMessage(
-                        new TextComponentString("DebugStick activated")
-                );
-
-                return new ActionResult<>(EnumActionResult.SUCCESS, stack);
-            }
+            return new ActionResult<>(EnumActionResult.SUCCESS, stack);
         }
 
         return new ActionResult<>(EnumActionResult.PASS, stack);

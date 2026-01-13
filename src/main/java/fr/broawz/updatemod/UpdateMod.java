@@ -3,6 +3,7 @@ package fr.broawz.updatemod;
 /*
  * Imports des classes internes au mod
  */
+import fr.broawz.updatemod.items.ModItemsInit;
 import fr.broawz.updatemod.network.PacketUpdateSign;   // Packet réseau personnalisé
 import fr.broawz.updatemod.proxy.CommonProxy;          // Proxy commun client / serveur
 import fr.broawz.updatemod.utils.GuiHandler;            // Gestionnaire des GUI
@@ -90,8 +91,9 @@ public class UpdateMod {
 
         // Enregistrement du gestionnaire de GUI
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+        ModItemsInit.init();
 
-        // Appel du preInit spécifique au proxy (client ou serveur)
+        // Appel du preInit spécifique au proxy (client ou serveur) TOUJOURS à la fin
         proxy.preInit();
     }
 
