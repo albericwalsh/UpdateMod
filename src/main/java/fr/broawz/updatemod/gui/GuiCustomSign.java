@@ -8,65 +8,49 @@ import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.*;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.GL11;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
- * GUI personnalisée pour l’édition des panneaux (signs)
- * - Texte sur plusieurs lignes
- * - Alignement
- * - Largeur du texte (text span)
- * - Insertion d’icônes via une liste scrollable
+ * GUI personnalisée pour l'édition des panneaux
+ * Version 1.1 : Ajout de catégories, recherche et tooltips
  */
 public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiResponder {
 
-    /** TileEntity du panneau édité */
     private final AbstractTileEntitySign sign;
-
-    /** Champs de texte (une par ligne du panneau) */
     private GuiTextField[] textFields;
-
-    /** Boutons d’alignement */
     private GuiButton alignLeft, alignCenter, alignRight;
-
-    /** Slider pour la largeur du texte (span) */
-    private GuiSlider textSpanSlider;
-
-    /** Index du champ de texte actuellement sélectionné */
     private int focusedTextField = 0;
-
-    /** Texte temporaire édité dans le GUI */
-    private String[] guiLines;
-
-    /** Valeur temporaire du text span */
+    private final String[] guiLines;
     private int guiTextSpan;
-
-    /** Liste scrollable des icônes */
     private IconList iconList;
 
-    /**
-     * Constructeur
-     * @param sign TileEntity du panneau
-     */
+    // ✅ NOUVEAU : Recherche et catégories
+    private GuiTextField searchField;
+    private String currentCategory = "all";
+    private GuiButton categoryAllBtn, categoryArrowBtn, categoryRoadBtn, categoryInfraBtn, categoryAireBtn;
+    private int activeLine = 0;
+
+
     public GuiCustomSign(AbstractTileEntitySign sign) {
         this.sign = sign;
-        this.guiLines = sign.getLines().clone(); // copie pour édition locale
+        this.guiLines = sign.getLines().clone();
         this.guiTextSpan = sign.getTextSpan();
     }
 
-    /**
-     * Initialisation de tous les composants graphiques
-     */
     @Override
     public void initGui() {
         Keyboard.enableRepeatEvents(true);
 
         int linesCount = guiLines.length;
-        int leftWidth = (int) (this.width * 0.75); // zone texte à gauche
+        int leftWidth = (int) (this.width * 0.70); // Réduction pour faire place aux catégories
 
-        // Positionnement général
         int titleY = 10;
         int propY = titleY + 20;
         int spacing = 10;
@@ -74,11 +58,8 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         int currentX = leftMargin;
         int sliderWidth = Math.min(150, leftWidth - 40);
 
-        /**
-         * Slider de largeur du texte (text span)
-         * Détermine le nombre max de caractères par ligne
-         */
-        textSpanSlider = new GuiSlider(this, 0, currentX, propY, "",
+        // Slider de largeur du texte
+        GuiSlider textSpanSlider = new GuiSlider(this, 0, currentX, propY, "",
                 1, 5, guiTextSpan,
                 new GuiSlider.FormatHelper() {
                     @Override
@@ -89,11 +70,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
                     }
                 }) {
 
-            /**
-             * Lors du déplacement du slider :
-             * - recalcul du text span
-             * - limitation du nombre de caractères
-             */
             @Override
             @ParametersAreNonnullByDefault
             protected void mouseDragged(Minecraft mc, int mouseX, int mouseY) {
@@ -105,7 +81,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
 
                 int maxChars = guiTextSpan * 10;
 
-                // Mise à jour de tous les champs de texte
                 for (int i = 0; i < textFields.length; i++) {
                     textFields[i].setMaxStringLength(maxChars);
                     String text = textFields[i].getText();
@@ -121,9 +96,7 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         this.buttonList.add(textSpanSlider);
         currentX += sliderWidth + spacing;
 
-        /**
-         * Boutons d’alignement
-         */
+        // Boutons d'alignement
         int btnWidth = 30;
         alignLeft = new GuiButton(1, currentX, propY, btnWidth, 20, "|=");
         currentX += btnWidth + spacing;
@@ -137,9 +110,7 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
 
         updateAlignButtons();
 
-        /**
-         * Champs de texte (une ligne par champ)
-         */
+        // Champs de texte
         int startY = propY + 40;
         textFields = new GuiTextField[linesCount];
 
@@ -155,44 +126,93 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
             textFields[i].setText(guiLines[i]);
         }
 
-        // Focus initial sur la première ligne
         if (textFields.length > 0) {
             textFields[0].setFocused(true);
             focusedTextField = 0;
         }
 
-        /**
-         * Création de la liste scrollable des icônes (à droite)
-         */
-        int listWidth = 80;
-        int listLeft = this.width - listWidth - 20;
+        // ✅ NOUVEAU : Champ de recherche (en haut à droite)
+        int searchY = 10;
+
+        searchField = new GuiTextField(
+                100,
+                this.fontRendererObj,
+                this.width - 150,
+                searchY,
+                130,
+                18
+        );
+
+        searchField.setMaxStringLength(50);
+        searchField.setText("");
+
+        // ✅ NOUVEAU : Boutons de catégories
+        int catBtnWidth  = 32;
+        int catBtnHeight = 20;
+        int catSpacing   = 4;
+        int columns      = 4;
+
+        int catStartX = this.width - (catBtnWidth * columns + catSpacing * (columns - 1)) - 10;
+        int catStartY = searchY + 25;
+
+
+        GuiButton[] categoryButtons = new GuiButton[] {
+                categoryAllBtn   = new GuiButton(10, 0, 0, catBtnWidth, catBtnHeight, "All"),
+                categoryArrowBtn = new GuiButton(11, 0, 0, catBtnWidth, catBtnHeight, ""),
+                categoryRoadBtn  = new GuiButton(12, 0, 0, catBtnWidth, catBtnHeight, ""),
+                categoryInfraBtn = new GuiButton(13, 0, 0, catBtnWidth, catBtnHeight, ""),
+                categoryAireBtn  = new GuiButton(14, 0, 0, catBtnWidth, catBtnHeight, "")
+        };
+
+        for (int i = 0; i < categoryButtons.length; i++) {
+            int col = i % columns;
+            int row = i / columns;
+
+            categoryButtons[i].xPosition = catStartX + col * (catBtnWidth + catSpacing);
+            categoryButtons[i].yPosition = catStartY + row * (catBtnHeight + catSpacing);
+
+            this.buttonList.add(categoryButtons[i]);
+        }
+
+        updateCategoryButtons();
+
+        // Liste scrollable des icônes
+        int listWidth = 160;
         int listRight = this.width;
+        int listLeftFinal = listRight - listWidth;
+        int rows = (int) Math.ceil(categoryButtons.length / (float) columns);
+        int mosaicHeight = rows * (catBtnHeight + catSpacing);
+
+        int listTop = catStartY + mosaicHeight + 10;
 
         iconList = new IconList(
                 this.mc,
-                listRight - listLeft,
+                listWidth,
                 this.height,
-                40,
+                listTop,
                 this.height - 40,
                 24
         );
-        iconList.left = listLeft;
+        iconList.left = listLeftFinal;
         iconList.right = listRight;
+
     }
 
-    /**
-     * Active/désactive les boutons d’alignement
-     * selon l’alignement actuel du panneau
-     */
     private void updateAlignButtons() {
         alignLeft.enabled = sign.getAlign() != AbstractTileEntitySign.Align.LEFT;
         alignCenter.enabled = sign.getAlign() != AbstractTileEntitySign.Align.CENTER;
         alignRight.enabled = sign.getAlign() != AbstractTileEntitySign.Align.RIGHT;
     }
 
-    /**
-     * Gestion des clics sur les boutons
-     */
+    // ✅ NOUVEAU : Mise à jour des boutons de catégories
+    private void updateCategoryButtons() {
+        categoryAllBtn.enabled = !currentCategory.equals("all");
+        categoryArrowBtn.enabled = !currentCategory.equals("arrow");
+        categoryRoadBtn.enabled = !currentCategory.equals("road");
+        categoryInfraBtn.enabled = !currentCategory.equals("infrastructure");
+        categoryAireBtn.enabled = !currentCategory.equals("aire");
+    }
+
     @Override
     @ParametersAreNonnullByDefault
     protected void actionPerformed(GuiButton button) {
@@ -203,16 +223,38 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         } else if (button == alignRight) {
             sign.setAlign(AbstractTileEntitySign.Align.RIGHT);
         }
+        // ✅ NOUVEAU : Gestion des catégories
+        else if (button == categoryAllBtn) {
+            currentCategory = "all";
+            iconList.updateFilter();
+        } else if (button == categoryArrowBtn) {
+            currentCategory = "arrow";
+            iconList.updateFilter();
+        } else if (button == categoryRoadBtn) {
+            currentCategory = "road";
+            iconList.updateFilter();
+        } else if (button == categoryInfraBtn) {
+            currentCategory = "infrastructure";
+            iconList.updateFilter();
+        } else if (button == categoryAireBtn) {
+            currentCategory = "aire";
+            iconList.updateFilter();
+        }
+
         updateAlignButtons();
+        updateCategoryButtons();
     }
 
-    /**
-     * Gestion du clavier :
-     * - saisie texte
-     * - navigation entre lignes
-     */
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
+        // ✅ Gestion de la recherche
+        if (searchField.isFocused()) {
+            searchField.textboxKeyTyped(typedChar, keyCode);
+            iconList.updateFilter();
+            activeLine = focusedTextField;
+            return;
+        }
+
         if (textFields.length > 0) {
             GuiTextField current = textFields[focusedTextField];
             String before = current.getText();
@@ -228,7 +270,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
                 }
             }
 
-            // Navigation clavier
             if (keyCode == Keyboard.KEY_TAB) {
                 current.setFocused(false);
                 focusedTextField =
@@ -249,63 +290,70 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
             }
         }
 
-        // Fermer le GUI
         if (keyCode == Keyboard.KEY_ESCAPE || keyCode == Keyboard.KEY_RETURN) closeGui();
     }
 
-    /**
-     * Gestion des clics souris
-     */
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
+        // ✅ Clic sur le champ de recherche
+        searchField.mouseClicked(mouseX, mouseY, mouseButton);
+
         for (int i = 0; i < textFields.length; i++) {
             textFields[i].mouseClicked(mouseX, mouseY, mouseButton);
-            if (textFields[i].isFocused()) focusedTextField = i;
+            if (textFields[i].isFocused()) {
+                focusedTextField = i;
+                activeLine = i; // ✅ IMPORTANT
+                searchField.setFocused(false);
+            }
         }
+
         super.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
-    /**
-     * Gestion du scroll souris (liste d’icônes)
-     */
     @Override
     public void handleMouseInput() throws IOException {
         super.handleMouseInput();
         iconList.handleMouseInput();
     }
 
-    /**
-     * Rendu du GUI
-     */
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
         drawDefaultBackground();
-        fontRendererObj.drawString("Panel: " + sign.getDisplayName(), 10, 10, 0xFFFFFF);
 
         for (GuiTextField tf : textFields) tf.drawTextBox();
 
         iconList.drawScreen(mouseX, mouseY, partialTicks);
 
+
         super.drawScreen(mouseX, mouseY, partialTicks);
+
+// ✅ ICI
+        searchField.drawTextBox();
+
+// Icônes des boutons catégories
+        iconList.drawCategoryButtonIcon(categoryArrowBtn, "arrow");
+        iconList.drawCategoryButtonIcon(categoryRoadBtn, "road");
+        iconList.drawCategoryButtonIcon(categoryInfraBtn, "infrastructure");
+        iconList.drawCategoryButtonIcon(categoryAireBtn, "aire");
+
+// Tooltip
+        iconList.drawTooltip(mouseX, mouseY);
+
     }
 
     @Override
     public void updateScreen() {
         for (GuiTextField tf : textFields) tf.updateCursorCounter();
+        searchField.updateCursorCounter();
     }
 
-    /**
-     * Fermeture du GUI → application des changements
-     */
+
     @Override
     public void onGuiClosed() {
         applyChanges();
         Keyboard.enableRepeatEvents(false);
     }
 
-    /**
-     * Envoie les modifications au serveur
-     */
     private void applyChanges() {
         for (int i = 0; i < guiLines.length; i++) {
             sign.setLine(i, guiLines[i]);
@@ -322,9 +370,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         UpdateMod.NETWORK.sendToServer(packet);
     }
 
-    /**
-     * Détermine l’alignement à partir des boutons
-     */
     private int getAlignFromButtons() {
         if (alignRight.enabled && alignCenter.enabled) return 0;
         if (alignRight.enabled && alignLeft.enabled) return 1;
@@ -332,7 +377,6 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
         return 1;
     }
 
-    /** Ferme le GUI */
     private void closeGui() {
         mc.displayGuiScreen(null);
     }
@@ -345,38 +389,54 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
     // Classe interne : IconList
     // =========================
 
-    /**
-     * Liste scrollable des icônes disponibles
-     * Cliquer sur une icône l’insère dans la ligne active
-     */
     class IconList extends GuiSlot {
 
         private final Minecraft mc;
-        private final java.util.List<Map.Entry<String, SignIcons.IconData>> entries;
+        private List<Map.Entry<String, SignIcons.IconData>> allEntries;
+        private List<Map.Entry<String, SignIcons.IconData>> filteredEntries;
+        private int hoveredIndex = -1;
 
         public IconList(Minecraft mc, int screenWidth, int screenHeight, int top, int bottom, int slotHeight) {
             super(mc, screenWidth, screenHeight, top, bottom, slotHeight);
             this.mc = mc;
-            this.entries = new java.util.ArrayList<>(SignIcons.getAllIconTokens().entrySet());
+            this.allEntries = new ArrayList<>(SignIcons.getAllIconTokens().entrySet());
+            this.filteredEntries = new ArrayList<>(allEntries);
             this.setShowSelectionBox(false);
+        }
 
-            int listWidth = 80;
-            this.left = screenWidth - listWidth - 20;
-            this.right = screenWidth - 20;
+        // ✅ NOUVEAU : Mise à jour du filtre
+        public void updateFilter() {
+            String search = searchField.getText().toLowerCase();
+
+            filteredEntries = allEntries.stream()
+                    .filter(entry -> {
+                        SignIcons.IconData data = entry.getValue();
+
+                        // Filtre par catégorie
+                        if (!currentCategory.equals("all") && !data.category.equals(currentCategory)) {
+                            return false;
+                        }
+
+                        // Filtre par recherche
+                        if (!search.isEmpty()) {
+                            String token = entry.getKey().toLowerCase();
+                            String name = data.name.toLowerCase();
+                            return token.contains(search) || name.contains(search);
+                        }
+
+                        return true;
+                    })
+                    .collect(Collectors.toList());
         }
 
         @Override
         protected int getSize() {
-            return entries.size();
+            return filteredEntries.size();
         }
 
         @Override
-        protected void elementClicked(int index, boolean doubleClick, int mouseX, int mouseY) {
-            if (index >= 0 && index < entries.size() && textFields.length > 0) {
-                String token = entries.get(index).getKey();
-                textFields[focusedTextField].writeText(token);
-            }
-        }
+        protected void elementClicked(int index, boolean doubleClick, int mouseX, int mouseY) {}
+
 
         @Override protected boolean isSelected(int index) { return false; }
 
@@ -395,17 +455,58 @@ public class GuiCustomSign extends GuiScreen implements GuiPageButtonList.GuiRes
 
         @Override
         protected void drawSlot(int entryID, int insideLeft, int yPos, int insideSlotHeight, int mouseXIn, int mouseYIn) {
-            if (entryID < 0 || entryID >= entries.size()) return;
+            if (entryID < 0 || entryID >= filteredEntries.size()) return;
 
-            Map.Entry<String, SignIcons.IconData> entry = entries.get(entryID);
+            Map.Entry<String, SignIcons.IconData> entry = filteredEntries.get(entryID);
 
             mc.getTextureManager().bindTexture(entry.getValue().texture);
 
-            int iconX = this.left + 5;
-            int textX = iconX + 25;
+            int iconX = this.left + 4;
+            int textX = iconX + 22;
+
+            // ✅ Highlight si survol
+            if (mouseXIn >= this.left && mouseXIn <= this.right &&
+                    mouseYIn >= yPos && mouseYIn < yPos + insideSlotHeight) {
+                hoveredIndex = entryID;
+                drawRect(this.left, yPos, this.right, yPos + insideSlotHeight, 0x80FFFFFF);
+            }
 
             drawModalRectWithCustomSizedTexture(iconX, yPos, 0, 0, 20, 20, 20, 20);
             GuiCustomSign.this.fontRendererObj.drawString(entry.getKey(), textX, yPos + 6, 0xFFFFFF);
+        }
+
+        // ✅ NOUVEAU : Affichage du tooltip
+        public void drawTooltip(int mouseX, int mouseY) {
+            if (hoveredIndex >= 0 && hoveredIndex < filteredEntries.size()) {
+                if (mouseX >= this.left && mouseX <= this.right &&
+                        mouseY >= this.top && mouseY <= this.bottom) {
+
+                    SignIcons.IconData data = filteredEntries.get(hoveredIndex).getValue();
+
+                    List<String> tooltip = new ArrayList<>();
+                    tooltip.add("§f" + data.name);
+                    tooltip.add("§7Category: " + data.category);
+                    if (data.ColorBend) {
+                        tooltip.add("§eTintable");
+                    }
+                    GuiCustomSign.this.drawHoveringText(tooltip, mouseX, mouseY);
+                }
+            }
+            hoveredIndex = -1;
+        }
+
+        private void drawCategoryButtonIcon(GuiButton button, String category) {
+            SignIcons.IconData icon = SignIcons.getCategoryIcon(category);
+            if (icon == null) return;
+
+            GL11.glColor4f(1f, 1f, 1f, 1f);
+            mc.getTextureManager().bindTexture(icon.texture);
+
+            int size = 14;
+            int x = button.xPosition + (button.width - size) / 2;
+            int y = button.yPosition + (button.height - size) / 2;
+
+            drawModalRectWithCustomSizedTexture(x, y, 0, 0, size, size, size, size);
         }
     }
 }

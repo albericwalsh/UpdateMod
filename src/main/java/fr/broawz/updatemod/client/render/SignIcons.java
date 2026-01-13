@@ -14,21 +14,29 @@ import java.util.regex.Pattern;
 
 /**
  * SignIcons
- * ---------
- * Classe utilitaire pour gérer les icônes depuis JSON.
+ * Version 1.1 : Ajout des noms et catégories pour chaque icône
  */
 public class SignIcons {
 
+    /**
+     * Données d'une icône
+     */
     public static class IconData {
         public final ResourceLocation texture;
         public final boolean ColorBend;
         public final String category;
+        public final String name;
+        public final boolean categoryIcon;
 
-        public IconData(ResourceLocation texture, boolean ColorBend, String category) {
+
+        public IconData(ResourceLocation texture, boolean ColorBend, String category, String name, boolean categoryIcon) {
             this.texture = texture;
             this.ColorBend = ColorBend;
             this.category = category;
+            this.name = name;
+            this.categoryIcon = categoryIcon;
         }
+
     }
 
     private static final Map<String, IconData> ICONS = new HashMap<>();
@@ -41,24 +49,36 @@ public class SignIcons {
         try (InputStreamReader reader = new InputStreamReader(
                 Objects.requireNonNull(Minecraft.class.getResourceAsStream("/assets/updatemod/data/icons.json"))
         )) {
-            // ⚠️ Version compatible avec Gson ancien
             JsonObject root = new JsonParser().parse(reader).getAsJsonObject();
             JsonArray icons = root.getAsJsonArray("icons");
 
             for (JsonElement el : icons) {
                 JsonObject icon = el.getAsJsonObject();
+
                 String token = icon.get("token").getAsString();
+                String name = icon.get("name").getAsString();  // ✅ NOUVEAU
                 String path = icon.get("path").getAsString();
                 boolean tintable = icon.get("tintable").getAsBoolean();
                 String category = icon.has("category") ? icon.get("category").getAsString() : "default";
 
-                ICONS.put(token, new IconData(new ResourceLocation("updatemod", path), tintable, category));
+                boolean isCategoryIcon = icon.has("CategoryIcon") && icon.get("CategoryIcon").getAsBoolean();
+
+                ICONS.put(token, new IconData(
+                        new ResourceLocation("updatemod", path),
+                        tintable,
+                        category,
+                        name,
+                        isCategoryIcon
+                ));
             }
+
+            System.out.println("[SignIcons] Loaded " + ICONS.size() + " icons from JSON");
+
         } catch (Exception e) {
+            System.err.println("[SignIcons] Failed to load icons.json!");
             e.printStackTrace();
         }
     }
-
 
     public static boolean isIcon(String token) {
         return ICONS.containsKey(token);
@@ -77,6 +97,19 @@ public class SignIcons {
         return ICONS;
     }
 
+    public static IconData getCategoryIcon(String category) {
+        for (IconData data : ICONS.values()) {
+            if (data.category.equals(category) && data.categoryIcon) {
+                return data;
+            }
+        }
+        return null;
+    }
+
+
+    /**
+     * Découpe une ligne de texte en segments texte + icônes
+     */
     public static List<String> parseLine(String line) {
         List<String> result = new ArrayList<>();
         if (line == null || line.isEmpty()) return result;

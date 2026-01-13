@@ -1,58 +1,38 @@
 {
   "icons": [
-    {
-      "token": "[v]",
-      "path": "textures/icons/arrow_down.png",
-      "tintable": true,
-      "category": "arrow"
-    },
-    {
-      "token": "[>]",
-      "path": "textures/icons/arrow_right.png",
-      "tintable": true,
-      "category": "arrow"
-    },
-    {
-      "token": "[<]",
-      "path": "textures/icons/arrow_left.png",
-      "tintable": true,
-      "category": "arrow"
-    },
-    {
-      "token": "[^]",
-      "path": "textures/icons/arrow_up.png",
-      "tintable": true,
-      "category": "arrow"
-    },
-    {
-      "token": "[HW]",
-      "path": "textures/icons/hightway.png",
-      "tintable": false,
-      "category": "road"
-    },
-    {
-      "token": "[!PL]",
-      "path": "textures/icons/no_truck.png",
-      "tintable": false,
-      "category": "road"
-    },
-    {
-      "token": "[PL]",
-      "path": "textures/icons/truck.png",
-      "tintable": false,
-      "category": "road"
-    },
-    {
-      "token": "[AP]",
-      "path": "textures/icons/airport.png",
-      "tintable": false,
-      "category": "services"
-    },
-    {
-      "token": "[EX]",
-      "path": "textures/icons/exit.png",
-      "tintable": true,
-      "category": "road"
-    }
+    { "token": "[v]",  "name": "Down Arrow",     "path": "textures/icons/arrow_down.png",  "tintable": true,  "category": "arrow" },
+    { "token": "[>]",  "name": "Right Arrow",    "path": "textures/icons/arrow_right.png", "tintable": true,  "category": "arrow" },
+    { "token": "[<]",  "name": "Left Arrow",     "path": "textures/icons/arrow_left.png",  "tintable": true,  "category": "arrow" },
+    { "token": "[^]",  "name": "Up Arrow",       "path": "textures/icons/arrow_up.png",    "tintable": true,  "category": "arrow", "CategoryIcon": true },
+
+    { "token": "[Hw]", "name": "Highway",        "path": "textures/icons/hightway.png",    "tintable": false, "category": "road", "CategoryIcon": true },
+    { "token": "[!Pl]","name": "No Truck",       "path": "textures/icons/no_truck.png",    "tintable": false, "category": "road" },
+    { "token": "[Pl]", "name": "Truck",          "path": "textures/icons/truck.png",       "tintable": false, "category": "road" },
+    { "token": "[Ex]", "name": "Exit",           "path": "textures/icons/exit.png",        "tintable": true,  "category": "road" },
+    { "token": "[Dn]", "name": "Douane",         "path": "textures/icons/douane.png",      "tintable": false, "category": "road" },
+    { "token": "[Tk]", "name": "Ticket",         "path": "textures/icons/ticket.png",      "tintable": false, "category": "road" },
+    { "token": "[VE]", "name": "Express Lane",   "path": "textures/icons/express.png",     "tintable": true,  "category": "road" },
+    { "token": "[3]",  "name": "30 km/h",        "path": "textures/icons/30.png",          "tintable": false, "category": "speed" },
+    { "token": "[5]",  "name": "50 km/h",        "path": "textures/icons/50.png",          "tintable": false, "category": "speed" },
+    { "token": "[7]",  "name": "70 km/h",        "path": "textures/icons/70.png",          "tintable": false, "category": "speed" },
+    { "token": "[9]",  "name": "90 km/h",        "path": "textures/icons/90.png",          "tintable": false, "category": "speed" },
+    { "token": "[11]", "name": "110 km/h",       "path": "textures/icons/110.png",         "tintable": false, "category": "speed" },
+    { "token": "[13]", "name": "130 km/h",       "path": "textures/icons/130.png",         "tintable": false, "category": "speed", "CategoryIcon": true },
+    { "token": "[15]", "name": "150 km/h",       "path": "textures/icons/150.png",         "tintable": false, "category": "speed" },
+
+    { "token": "[Ap]", "name": "Airport",        "path": "textures/icons/airport.png",     "tintable": false, "category": "infrastructure" },
+    { "token": "[Ar]", "name": "Arrival",        "path": "textures/icons/arrival.png",     "tintable": false, "category": "infrastructure" },
+    { "token": "[Dp]", "name": "Departure",      "path": "textures/icons/departure.png",   "tintable": false, "category": "infrastructure" },
+    { "token": "[Bt]", "name": "Boat",           "path": "textures/icons/boat.png",        "tintable": false, "category": "infrastructure" },
+    { "token": "[Bs]", "name": "Bus",            "path": "textures/icons/bus.png",         "tintable": false, "category": "infrastructure" },
+    { "token": "[Tr]", "name": "Train",          "path": "textures/icons/train.png",       "tintable": false, "category": "infrastructure", "CategoryIcon": true },
+    { "token": "[Tx]", "name": "Taxi",           "path": "textures/icons/taxi.png",        "tintable": false, "category": "infrastructure" },
+
+    { "token": "[Fl]", "name": "Fuel Station",   "path": "textures/icons/fuel.png",        "tintable": false, "category": "aire" },
+    { "token": "[Bd]", "name": "Lodging",        "path": "textures/icons/bed.png",         "tintable": false, "category": "aire" },
+    { "token": "[If]", "name": "Information",    "path": "textures/icons/info.png",        "tintable": false, "category": "aire" },
+    { "token": "[Ss]", "name": "Emergency SOS",  "path": "textures/icons/sos.png",         "tintable": false, "category": "aire" },
+    { "token": "[Rp]", "name": "Rest Area",      "path": "textures/icons/repo.png",        "tintable": false, "category": "aire", "CategoryIcon": true },
+    { "token": "[Rt]", "name": "Restaurant",     "path": "textures/icons/restaurant.png",  "tintable": false, "category": "aire" }
   ]
 }
